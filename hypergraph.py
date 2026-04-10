@@ -7,16 +7,17 @@ import torch.nn as nn
 
 def getHyperGraph(seq, time_list):
     """
-    生成基于超边的序列图
-    
+    Build a hyperedge-based sequence hypergraph.
+
     Args:
-        seq: 用户访问的POI序列
-        time_list: 对应的时间戳序列
-        
+        seq: A user's visited POI sequence (global POI ids).
+        time_list: The corresponding timestamps for the POI sequence.
+
     Returns:
-        Data: 包含超边结构的图数据对象
+        Data: A PyG Data object that contains hyperedge incidence structure and
+              auxiliary temporal/geographical interval features.
     """
-    # 构建节点映射和特征
+    # Build local node mapping and node features (store global POI ids in x)
     i, x, nodes = 0, [], {}
     node_indices = []
     for node in seq:
@@ -27,17 +28,18 @@ def getHyperGraph(seq, time_list):
         node_indices.append(nodes[node])
     x = torch.LongTensor(x)
     
-    # 构建超边 - 每个超边连接连续的k个POI (这里使用k=3，可以根据需要调整)
+    # Build hyperedges: each hyperedge connects a window of consecutive POIs.
+    # Here we use k=3 by default (can be adjusted if needed).
     k = min(3, len(seq))
     hyperedges = []
     hyperedge_attr = []
     
     for i in range(len(seq) - k + 1):
-        # 创建一个超边连接连续的k个POI
+        # Create one hyperedge that connects k consecutive POIs (in local ids)
         edge = [node_indices[i+j] for j in range(k)]
         hyperedges.append(edge)
         
-        # 计算这个超边的属性（例如，时间跨度和平均距离）
+        # Hyperedge attributes: time span and average geographic distance
         time_span = time_list[i+k-1] - time_list[i] if i+k-1 < len(time_list) else 0
         distances = []
         for j in range(i, i+k-1):
@@ -46,7 +48,8 @@ def getHyperGraph(seq, time_list):
         avg_distance = sum(distances) / len(distances) if distances else 0
         hyperedge_attr.append([time_span, avg_distance])
     
-    # 如果序列太短，无法形成足够的超边，则创建至少一个超边
+    # If the sequence is too short to form hyperedges, create a single hyperedge
+    # that contains all nodes.
     if not hyperedges and len(seq) > 0:
         hyperedges.append(node_indices)
         time_span = time_list[-1] - time_list[0] if len(time_list) > 1 else 0
@@ -56,9 +59,9 @@ def getHyperGraph(seq, time_list):
             avg_distance = sum(distances) / len(distances)
         hyperedge_attr.append([time_span, avg_distance])
     
-    # 构建超边索引 (节点到超边的映射)
+    # Build hyperedge incidence index (node_id -> hyperedge_id)
     if hyperedges:
-        # 展平所有超边中的节点
+        # Flatten all (node, hyperedge) pairs
         node_to_hyperedge = []
         hyperedge_to_node = []
         
@@ -70,11 +73,11 @@ def getHyperGraph(seq, time_list):
         hyperedge_index = torch.LongTensor([node_to_hyperedge, hyperedge_to_node])
         hyperedge_attr = torch.FloatTensor(hyperedge_attr)
     else:
-        # 处理边缘情况：没有足够的数据形成超边
+        # Edge case: no hyperedges (empty sequence)
         hyperedge_index = torch.LongTensor(2, 0)
         hyperedge_attr = torch.FloatTensor(0, 2)
     
-    # 计算时间和距离间隔
+    # Compute discrete time/distance intervals (optional auxiliary features)
     def get_min(interv):
         interv_min = interv.clone()
         interv_min[interv_min == 0] = 2 ** 31
@@ -88,7 +91,7 @@ def getHyperGraph(seq, time_list):
         time_interv = torch.clamp((time_interv / get_min(time_interv)).long(), 0, gol.conf['interval'] - 1)
         dist_interv = torch.clamp((dist_interv / get_min(dist_interv)).long(), 0, gol.conf['interval'] - 1)
     
-    # 创建包含超边结构的图数据对象
+    # Create the PyG Data object
     return Data(
         x=x, 
         hyperedge_index=hyperedge_index, 
@@ -101,53 +104,53 @@ def getHyperGraph(seq, time_list):
 
 def generateHyperGraph(hyperedges, node_features):
     """
-    根据超边生成超图
-    
+    Generate hypergraph representations from hyperedges.
+
     Args:
-        hyperedges: 超边列表
-        node_features: 节点特征
-        
+        hyperedges: Hyperedges in either tensor form (e.g., hyperedge_index) or list form.
+        node_features: Node feature matrix.
+
     Returns:
-        sv: 超图节点表示
-        si: 超边表示
+        sv: Node representations aggregated from incident hyperedges.
+        si: Hyperedge representations aggregated from member nodes.
     """
-    # 初始化超图节点表示和超边表示
+    # Initialize node-level and hyperedge-level representations
     num_nodes = node_features.size(0)
     num_hyperedges = hyperedges.size(1) if isinstance(hyperedges, torch.Tensor) else len(hyperedges)
     
-    # 创建超图节点表示 sv
+    # Node representations (sv)
     sv = torch.zeros(num_nodes, gol.conf['hid_dim'], device=node_features.device)
     
-    # 创建超边表示 si
+    # Hyperedge representations (si)
     si = torch.zeros(num_hyperedges, gol.conf['hid_dim'], device=node_features.device)
     
-    # 对于每个超边，聚合其中节点的特征来创建超边表示
+    # For each hyperedge, aggregate member node features to obtain hyperedge features
     if isinstance(hyperedges, torch.Tensor):
-        # 如果hyperedges是张量形式 (如hyperedge_index)
+        # Tensor form (e.g., hyperedge_index)
         for i in range(num_hyperedges):
-            # 找出属于当前超边的所有节点
+            # Nodes that belong to hyperedge i
             mask = hyperedges[1] == i
             node_indices = hyperedges[0][mask]
             
-            # 聚合这些节点的特征
+            # Aggregate node features within the hyperedge
             if len(node_indices) > 0:
                 edge_features = node_features[node_indices]
                 si[i] = torch.mean(edge_features, dim=0)
     else:
-        # 如果hyperedges是列表形式
+        # List form
         for i, edge in enumerate(hyperedges):
             if len(edge) > 0:
                 edge_features = node_features[edge]
                 si[i] = torch.mean(edge_features, dim=0)
     
-    # 对于每个节点，聚合其所属的所有超边的特征来更新节点表示
+    # For each node, aggregate incident hyperedge features to update node representations
     if isinstance(hyperedges, torch.Tensor):
         for i in range(num_nodes):
-            # 找出当前节点所属的所有超边
+            # Hyperedges incident to node i
             mask = hyperedges[0] == i
             edge_indices = hyperedges[1][mask]
             
-            # 聚合这些超边的特征
+            # Aggregate incident hyperedge features
             if len(edge_indices) > 0:
                 node_hyperedge_features = si[edge_indices]
                 sv[i] = torch.mean(node_hyperedge_features, dim=0)
@@ -166,13 +169,14 @@ def generateHyperGraph(hyperedges, node_features):
 
 class HyperGraphRep(nn.Module):
     """
-    输入：
-      - hyperedge_index: LongTensor [2, M]  (node_id, edge_id)
-      - node_embs     : FloatTensor [N, d]  (全局 POI embedding table)
-      - hyperedge_attr: FloatTensor [E, 3]  (长度/时间跨度/平均邻距)  —— 可选
-    输出：
-      - sv: [N, d]  节点（POI）在超图上下文中的表征（供 C 模块作 Value）
-      - si: [E, d]  超边表征（供 C 的 Query，亦作为 D 模块 Su）
+    Inputs:
+      - hyperedge_index: LongTensor [2, M] incidence pairs (node_id, edge_id)
+      - node_embs: FloatTensor [N, d] node embeddings (local nodes for one trajectory)
+      - hyperedge_attr: FloatTensor [E, 3] hyperedge attributes (e.g., length / time span / avg distance), optional
+
+    Outputs:
+      - sv: FloatTensor [N, d] node representations in the hypergraph context (used as Value in module C)
+      - si: FloatTensor [E, d] hyperedge representations (used as Query in module C and as Su in module D)
     """
     def __init__(self, dim: int, he_attr_dim: int = 3):
         super().__init__()
@@ -199,25 +203,25 @@ class HyperGraphRep(nn.Module):
             si = node_embs.new_zeros((1, d))
             return sv, si
 
-        # 1) 超边内部节点平均 → edge_mean: [E, d]
+        # 1) Mean pooling over nodes within each hyperedge -> edge_mean: [E, d]
         edge_sum = node_embs.new_zeros((E, d))
         edge_cnt = node_embs.new_zeros((E, 1))
         edge_sum.index_add_(0, col, node_embs[row])
         edge_cnt.index_add_(0, col, torch.ones_like(col, dtype=torch.float32, device=device).unsqueeze(1))
         edge_mean = edge_sum / edge_cnt.clamp_min(1.0)
 
-        # 2) 超边属性融合 → si
+        # 2) Fuse hyperedge attributes -> si
         if hyperedge_attr is None or hyperedge_attr.numel() == 0:
             si = self.node_mlp(edge_mean)  # [E, d]
         else:
             hea = hyperedge_attr
             if hea.dim() == 1:
                 hea = hea.unsqueeze(-1)
-            # 若传入的不是“每超边一行”，则将“每入射边属性”按 col 聚合为“每超边属性”
+            # If attributes are not provided as one row per hyperedge, aggregate
+            # per-incidence attributes to per-hyperedge attributes using `col`.
             if hea.size(0) != E:
                 if hea.size(0) == col.numel():
-                    # segment mean 到每超边
-                    # 构造 [E, k]
+                    # Segment-mean aggregation to obtain [E, k]
                     k = hea.size(1)
                     hea_mean = edge_mean.new_zeros((E, k))
                     cnt = edge_mean.new_zeros((E, 1))
@@ -226,7 +230,7 @@ class HyperGraphRep(nn.Module):
                     cnt.index_add_(0, col, torch.ones(col.size(0), 1, device=edge_mean.device, dtype=edge_mean.dtype))
                     hea = hea_mean / cnt.clamp_min(1.0)
                 else:
-                    # 兜底对齐到 E 行（pad/截断）
+                    # Fallback alignment to E rows (pad/truncate)
                     hea = hea.to(device=edge_mean.device, dtype=edge_mean.dtype)
                     if hea.size(0) < E:
                         pad = torch.zeros((E - hea.size(0), hea.size(1)), device=edge_mean.device, dtype=edge_mean.dtype)
@@ -239,10 +243,10 @@ class HyperGraphRep(nn.Module):
             he = torch.cat([edge_mean, hea], dim=-1)  # [E, d+k]
             si = self.he_mlp(he)  # [E, d]
 
-        # 3) 反向聚合回节点 → sv
+        # 3) Aggregate hyperedge representations back to nodes -> sv
         node_sum = node_embs.new_zeros((N, d))
         node_cnt = node_embs.new_zeros((N, 1))
-        # AMP 场景下确保 dtype 一致，避免 Float/Half 混用导致 index_add_ 报错
+        # Keep dtype consistent (e.g., under AMP) to avoid index_add_ dtype mismatch.
         si = si.to(node_embs.dtype)
         node_sum.index_add_(0, row, si[col])
         node_cnt.index_add_(0, row, torch.ones_like(row, dtype=torch.float32, device=device).unsqueeze(1))
