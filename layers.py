@@ -671,97 +671,99 @@ class SDE_Diffusion(nn.Module):
         return mean, std
 
 
-# �¼�HawkesHyperGraphLayer ģ��
+# HawkesHyperGraphLayer module
 
 class HawkesHyperGraphLayer(nn.Module):
     def __init__(self, n_poi, hidden_dim, gamma=1.0):
         """
-        �� Hawkes ע�������Ƶĳ�ͼ�����㡣
-        n_poi: ��POI����������������hidden_dim: Ƕ��ά�ȣ�gamma: Hawkesʱ��˥��ϵ����
+        A Hawkes-attention hypergraph layer.
+
+        Args:
+            n_poi: Number of POIs (kept for interface compatibility).
+            hidden_dim: Embedding dimension.
+            gamma: Temporal decay factor in the Hawkes-style kernel.
         """
         super(HawkesHyperGraphLayer, self).__init__()
         self.hidden_dim = hidden_dim
         self.gamma = gamma
-        # ע�������ƿ�ѵ������
-        self.W_node = nn.Linear(hidden_dim, hidden_dim, bias=False)  # ��������ͶӰ
-        self.W_edge = nn.Linear(hidden_dim, hidden_dim, bias=False)  # ��������ͶӰ
-        self.att_vec = nn.Parameter(torch.empty(hidden_dim * 2))  # ע������������ a
-        nn.init.xavier_uniform_(self.att_vec.unsqueeze(0))  # ������ʼ��
+        # Learnable projections and attention vector.
+        self.W_node = nn.Linear(hidden_dim, hidden_dim, bias=False)  # node projection
+        self.W_edge = nn.Linear(hidden_dim, hidden_dim, bias=False)  # hyperedge projection
+        self.att_vec = nn.Parameter(torch.empty(hidden_dim * 2))  # attention vector a
+        nn.init.xavier_uniform_(self.att_vec.unsqueeze(0))  # Xavier initialization
 
     def forward(self, poi_emb_matrix, batch_seqs, batch_edge_times):
         """
-        ����������ÿ���û������ߣ��Ķ�����Ȥ��ʾ��
-        poi_emb_matrix: ȫ��POIǶ����� (n_poi �� d)��
-        batch_seqs: ����Ϊbatch_size���б���ÿ���Ǹ��û����е�POI�����б� (Tensor)��
-        batch_edge_times: ����Ϊbatch_size���б���ÿ���Ǹ��û�����ǩ��ʱ����б� (Tensor[length=len(seq)-1])��
-        ���أ� Tensor(batch_size �� hidden_dim) ��ÿ���û��Ķ�����ȤǶ�롣
+        Build a short-term user interest representation for each sequence in the batch.
+
+        Args:
+            poi_emb_matrix: Global POI embedding matrix of shape (n_poi, hidden_dim).
+            batch_seqs: A list (length batch_size) of POI index tensors; each tensor is a user sequence.
+            batch_edge_times: A list (length batch_size) of time-interval tensors with length len(seq)-1,
+                or None when temporal information is unavailable.
+
+        Returns:
+            Tensor of shape (batch_size, hidden_dim): short-term user interest embeddings.
         """
         batch_size = len(batch_seqs)
         device = poi_emb_matrix.device
 
-        user_embeddings = []  # �����ռ�ÿ���û��Ķ��ڱ�ʾ
+        user_embeddings = []  # collect per-user short-term representations
         for u in range(batch_size):
-            seq = batch_seqs[u]  # ��ǰ�û���POI���� (Tensor of POI indices)
+            seq = batch_seqs[u]  # current user POI sequence (Tensor of POI indices)
             if seq.dim() == 0:
-                # ��ֻ��һ��POI������ά����������������⣩
+                # Single POI case: ensure 1D tensor.
                 seq = seq.unsqueeze(0)
-            poi_ids = seq.tolist()  # POI����ת��Ϊ�б�
-            # ��ȡ���û����߰�����POI�ڵ��ʼ����
-            V_feat = poi_emb_matrix[seq]  # ��״: (num_nodes_in_edge, hidden_dim)
-            # ����ÿ���ڵ�� Hawkes ʱ��Ȩ�� w = exp(-gamma * ��t)
+            poi_ids = seq.tolist()  # kept for potential debugging/inspection
+            # Node features for the POIs in this hyperedge/sequence.
+            V_feat = poi_emb_matrix[seq]  # shape: (num_nodes_in_edge, hidden_dim)
+            # Hawkes-style temporal weights: w = exp(-gamma * delta_t)
             w = None
             if batch_edge_times[u] is not None:
-                # ͨ���ۻ�����ʱ���õ�ÿ��ǩ����ʱ��� (������п�ʼ)
-                time_intervals = batch_edge_times[u].to(device)  # ����ǩ��ʱ��� Tensor
+                # Convert intervals to timestamps starting from 0.
+                time_intervals = batch_edge_times[u].to(device)
                 if time_intervals.numel() > 0:
                     timestamps = torch.zeros(len(seq), device=device)
                     timestamps[1:] = torch.cumsum(time_intervals, dim=0)
                 else:
                     timestamps = torch.zeros(len(seq), device=device)
-                # ���һ��ǩ����Ϊ��ǰʱ�� (���ʱ���)
+                # Use the last timestamp as "current time".
                 t_last = timestamps[-1]
-                # ����ÿ��POI�ڵ�������ǩ����ʱ���
-                delta_t = t_last - timestamps  # ����ά��: [num_nodes_in_edge]
-                # Hawkes ˥��Ȩ��
+                # Time since each event.
+                delta_t = t_last - timestamps  # shape: [num_nodes_in_edge]
+                # Exponential decay.
                 w = torch.exp(-self.gamma * delta_t)
-                # ��һ�� POI �������г��ֶ�Σ�����ÿ�γ��ֶ��и��ԵĽڵ㣨����λ�ò�ͬ���������߱�ʾӦ�ϲ�ͬһPOI��
-                # Ȼ��Ϊ�˱���ÿ�γ��ֵ���Ϣ�������ݲ�ȥ�ؽڵ㣬�����ö�γ��ֵ�POI��Ϊ�����еĶ������㣬��Ȩ�������ڶ�Ӧ�ڵ��ϡ�
             else:
-                # ����ʱ�����Ϣ�����н�1��POIʱ������Ȩ��Ϊ1
+                # No temporal information: uniform weights.
                 w = torch.ones(len(seq), device=device)
 
-            # ���ʱ��Ȩ�������ڵ����� (��Ԫ�س��Ա���Ȩ��)
-            V_feat_time = V_feat * w.unsqueeze(-1)  # shape: (num_nodes_in_edge, hidden_dim)
+            # Apply temporal weights to node features.
+            V_feat_time = V_feat * w.unsqueeze(-1)  # (num_nodes_in_edge, hidden_dim)
 
-            # ���㳬�߳�ʼ����������ȡ��Ȩ�ڵ�������ƽ����Ϊ���߱���
+            # Initialize hyperedge feature as the mean of weighted node features.
             if V_feat_time.size(0) > 0:
-                E_feat = V_feat_time.mean(dim=0, keepdim=True)  # shape: (1, hidden_dim)
+                E_feat = V_feat_time.mean(dim=0, keepdim=True)  # (1, hidden_dim)
             else:
                 E_feat = torch.zeros(1, self.hidden_dim, device=device)
 
-            # ͶӰ��ע�����ռ�
-            V_proj = self.W_node(V_feat_time)  # �ڵ�ͶӰ (num_nodes, hidden_dim)
-            E_proj = self.W_edge(E_feat)  # ����ͶӰ (1, hidden_dim)
+            # Project into attention space.
+            V_proj = self.W_node(V_feat_time)  # (num_nodes, hidden_dim)
+            E_proj = self.W_edge(E_feat)  # (1, hidden_dim)
 
-            # ����ע����ϵ��
+            # Compute attention weights.
             num_nodes = V_proj.size(0)
-            # ������ͶӰ�ظ���������ÿ���ڵ�ƴ�Ӽ���ע����
             E_rep = E_proj.repeat(num_nodes, 1)  # (num_nodes, hidden_dim)
             concat = torch.cat([V_proj, E_rep], dim=1)  # (num_nodes, 2*hidden_dim)
-            # LeakyReLU �����ע�������
             att_scores = F.leaky_relu(torch.matmul(concat, self.att_vec.unsqueeze(-1)).squeeze(-1), negative_slope=0.2)
-            # ��һ��ע����Ȩ�� (�Ե�ǰ���������ж���)
             att_weights = F.softmax(att_scores, dim=0)  # (num_nodes,)
-            # ��Ȩ�ۺϽڵ������õ����µĳ��߱�ʾ
+            # Weighted aggregation to obtain the hyperedge representation.
             if num_nodes > 0:
-                # ʹ��ע����Ȩ�ضԽڵ��������
                 edge_rep = torch.sum(att_weights.unsqueeze(-1) * V_feat_time, dim=0, keepdim=True)  # (1, hidden_dim)
             else:
-                edge_rep = torch.zeros_like(E_feat)  # �޽ڵ��򱣳���
+                edge_rep = torch.zeros_like(E_feat)
 
-            # ���߱�ʾ edge_rep ������Ϊ�û�������Ȥ��ʾ
+            # Treat the hyperedge representation as the user's short-term interest embedding.
             user_embeddings.append(edge_rep.squeeze(0))
-        # �ѵ������û��ı�ʾ
-        user_embeddings = torch.stack(user_embeddings, dim=0)  # shape: (batch_size, hidden_dim)
+        user_embeddings = torch.stack(user_embeddings, dim=0)  # (batch_size, hidden_dim)
         return user_embeddings
 
