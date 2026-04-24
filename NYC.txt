@@ -1,0 +1,1817 @@
+09/27 02:32 - Experiment started - Run #009
+09/27 02:32 - Local log file: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/GT_kan_NYC_run_009_20250927_023227.log
+09/27 02:32 - Dataset: NYC
+09/27 02:32 - Device: cuda:0
+09/27 02:32 - Configuration: {'lr': 0.0010787791714810687, 'decay': 0.0006032518129403333, 'num_layer': 2, 'num_heads': 2, 'hidden': 128, 'dropout': True, 'dp': 0.2050701486830915, 'max_len': 200, 'interval': 128, 'zeta': 0.1462648414677925, 'T': 1, 'beta_min': 0.1, 'beta_max': 10, 'dt': 0.009188764775016048}
+09/27 02:32 - Loading from /tmp/pycharm_project_CP/DiffDGMN_data/data/processed/NYC
+09/27 02:32 - #Users: 1083, #POIs: 9989, #Check-ins: 179468
+09/27 02:32 - #Train: 142050, #Valid: 17906, #Test: 18429
+09/27 02:32 - Distance Graph: #Edges: 1447008, Avg. degree: 144.86
+09/27 02:32 - Avg. visit: 165.71, Density: 0.017, Sparsity: 0.983
+09/27 02:32 - Warning: failed to restore RNG state: RNG state must be a torch.ByteTensor
+09/27 02:32 - Resuming from checkpoint: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_008_latest.pt (start_epoch=27)
+09/27 02:32 - Dropout probability: 0.2050701486830915
+09/27 02:32 - The Number of Parameters for the Diff-DGMN Model is 2113300
+09/27 02:32 - -------------------Start Training---------------------
+
+09/27 02:32 - Optimizer state restored from checkpoint.
+09/27 02:32 - Batch 0 / 277, Total_loss: 0.06073 = Recloss: 0.02630 + Divloss: 0.23541
+09/27 02:45 - Batch 138 / 277, Total_loss: 0.05884 = Recloss: 0.02640 + Divloss: 0.22181
+09/27 02:59 - Batch 276 / 277, Total_loss: 0.06012 = Recloss: 0.02501 + Divloss: 0.24004
+09/27 03:00 - Avg Epoch 27 / 150, Total_Loss: 0.05955 = Recloss: 0.02531 + Divloss: 0.23411
+09/27 03:00 - Valid Recall@[1,5,10,20]: 0.44968, 0.58628, 0.61599, 0.64437
+09/27 03:00 - Valid NDCG@[1,5,10,20]: 0.44968, 0.52541, 0.53499, 0.54220
+09/27 03:00 - Valid ACC@[1,5,10,20]: 0.44968, 0.58628, 0.61599, 0.64437
+09/27 03:00 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0027.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 03:01 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.43247056, 0.49839926, 0.55683976, 0.58418796, 0.61517174]),
+ 'MRR': np.float64(0.4879235887514514),
+ 'NDCG': array([0.43247056, 0.47406694, 0.50087889, 0.50973883, 0.51763979]),
+ 'Recall': array([0.43247056, 0.49839926, 0.55683976, 0.58418796, 0.61517174])}
+09/27 03:01 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 03:01 - Best valid NDCG@5 at epoch 27
+
+09/27 03:01 - Batch 0 / 277, Total_loss: 0.05814 = Recloss: 0.02375 + Divloss: 0.23515
+09/27 03:14 - Batch 138 / 277, Total_loss: 0.05277 = Recloss: 0.01892 + Divloss: 0.23142
+09/27 03:28 - Batch 276 / 277, Total_loss: 0.05437 = Recloss: 0.01886 + Divloss: 0.24281
+09/27 03:29 - Avg Epoch 28 / 150, Total_Loss: 0.05753 = Recloss: 0.02334 + Divloss: 0.23374
+09/27 03:29 - Valid Recall@[1,5,10,20]: 0.47040, 0.59287, 0.62309, 0.64950
+09/27 03:29 - Valid NDCG@[1,5,10,20]: 0.47040, 0.53837, 0.54820, 0.55486
+09/27 03:29 - Valid ACC@[1,5,10,20]: 0.47040, 0.59287, 0.62309, 0.64950
+09/27 03:29 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0028.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 03:30 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.44972598, 0.5100114 , 0.5629714 , 0.59362961, 0.62038092]),
+ 'MRR': np.float64(0.5008462300476695),
+ 'NDCG': array([0.44972598, 0.48776184, 0.51203749, 0.52200788, 0.5286949 ]),
+ 'Recall': array([0.44972598, 0.5100114 , 0.5629714 , 0.59362961, 0.62038092])}
+09/27 03:30 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 03:30 - Best valid NDCG@5 at epoch 28
+
+09/27 03:30 - Batch 0 / 277, Total_loss: 0.05473 = Recloss: 0.02137 + Divloss: 0.22808
+09/27 03:43 - Batch 138 / 277, Total_loss: 0.05319 = Recloss: 0.02007 + Divloss: 0.22646
+09/27 03:57 - Batch 276 / 277, Total_loss: 0.05656 = Recloss: 0.02383 + Divloss: 0.22375
+09/27 03:58 - Avg Epoch 29 / 150, Total_Loss: 0.05577 = Recloss: 0.02175 + Divloss: 0.23260
+09/27 03:58 - Valid Recall@[1,5,10,20]: 0.47766, 0.59835, 0.62862, 0.65598
+09/27 03:58 - Valid NDCG@[1,5,10,20]: 0.47766, 0.54487, 0.55470, 0.56155
+09/27 03:58 - Valid ACC@[1,5,10,20]: 0.47766, 0.59835, 0.62862, 0.65598
+09/27 03:58 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0029.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 03:59 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.45683434, 0.51668566, 0.56937436, 0.60106354, 0.6260242 ]),
+ 'MRR': np.float64(0.5076394802274),
+ 'NDCG': array([0.45683434, 0.49459632, 0.51878577, 0.52898934, 0.5352499 ]),
+ 'Recall': array([0.45683434, 0.51668566, 0.56937436, 0.60106354, 0.6260242 ])}
+09/27 03:59 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 03:59 - Best valid NDCG@5 at epoch 29
+
+09/27 03:59 - Batch 0 / 277, Total_loss: 0.05505 = Recloss: 0.02051 + Divloss: 0.23616
+09/27 04:12 - Batch 138 / 277, Total_loss: 0.05320 = Recloss: 0.02022 + Divloss: 0.22546
+09/27 04:26 - Batch 276 / 277, Total_loss: 0.05292 = Recloss: 0.01909 + Divloss: 0.23124
+09/27 04:27 - Avg Epoch 30 / 150, Total_Loss: 0.05387 = Recloss: 0.01991 + Divloss: 0.23215
+09/27 04:27 - Valid Recall@[1,5,10,20]: 0.47593, 0.60209, 0.63085, 0.65889
+09/27 04:27 - Valid NDCG@[1,5,10,20]: 0.47593, 0.54636, 0.55568, 0.56275
+09/27 04:27 - Valid ACC@[1,5,10,20]: 0.47593, 0.60209, 0.63085, 0.65889
+09/27 04:27 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0030.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 04:28 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.45417548, 0.52129795, 0.57214173, 0.60383092, 0.62786912]),
+ 'MRR': np.float64(0.5078838986389062),
+ 'NDCG': array([0.45417548, 0.49652505, 0.51970773, 0.52995023, 0.53599276]),
+ 'Recall': array([0.45417548, 0.52129795, 0.57214173, 0.60383092, 0.62786912])}
+09/27 04:28 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 04:28 - Best valid NDCG@5 at epoch 30
+
+09/27 04:28 - Batch 0 / 277, Total_loss: 0.05566 = Recloss: 0.02163 + Divloss: 0.23264
+09/27 04:41 - Batch 138 / 277, Total_loss: 0.05023 = Recloss: 0.01557 + Divloss: 0.23699
+09/27 04:54 - Batch 276 / 277, Total_loss: 0.05035 = Recloss: 0.01712 + Divloss: 0.22717
+09/27 04:55 - Avg Epoch 31 / 150, Total_Loss: 0.05202 = Recloss: 0.01820 + Divloss: 0.23127
+09/27 04:55 - Valid Recall@[1,5,10,20]: 0.49291, 0.61024, 0.63655, 0.66536
+09/27 04:55 - Valid NDCG@[1,5,10,20]: 0.49291, 0.55845, 0.56695, 0.57421
+09/27 04:55 - Valid ACC@[1,5,10,20]: 0.49291, 0.61024, 0.63655, 0.66536
+09/27 04:55 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0031.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 04:57 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.47007434, 0.53312714, 0.57984698, 0.60822617, 0.63486896]),
+ 'MRR': np.float64(0.5202880879617721),
+ 'NDCG': array([0.47007434, 0.50985623, 0.53111258, 0.54027759, 0.54700181]),
+ 'Recall': array([0.47007434, 0.53312714, 0.57984698, 0.60822617, 0.63486896])}
+09/27 04:57 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 04:57 - Best valid NDCG@5 at epoch 31
+
+09/27 04:57 - Batch 0 / 277, Total_loss: 0.05184 = Recloss: 0.01909 + Divloss: 0.22392
+09/27 05:10 - Batch 138 / 277, Total_loss: 0.04520 = Recloss: 0.01206 + Divloss: 0.22659
+09/27 05:23 - Batch 276 / 277, Total_loss: 0.05274 = Recloss: 0.01914 + Divloss: 0.22973
+09/27 05:24 - Avg Epoch 32 / 150, Total_Loss: 0.05055 = Recloss: 0.01687 + Divloss: 0.23026
+09/27 05:24 - Valid Recall@[1,5,10,20]: 0.50140, 0.61538, 0.64079, 0.67095
+09/27 05:24 - Valid NDCG@[1,5,10,20]: 0.50140, 0.56519, 0.57344, 0.58109
+09/27 05:24 - Valid ACC@[1,5,10,20]: 0.50140, 0.61538, 0.64079, 0.67095
+09/27 05:24 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0032.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 05:25 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.47664008, 0.54018124, 0.58516469, 0.61272994, 0.63817896]),
+ 'MRR': np.float64(0.526614334499705),
+ 'NDCG': array([0.47664008, 0.51673009, 0.537262  , 0.54625188, 0.55271085]),
+ 'Recall': array([0.47664008, 0.54018124, 0.58516469, 0.61272994, 0.63817896])}
+09/27 05:25 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 05:25 - Best valid NDCG@5 at epoch 32
+
+09/27 05:26 - Batch 0 / 277, Total_loss: 0.04579 = Recloss: 0.01339 + Divloss: 0.22154
+09/27 05:39 - Batch 138 / 277, Total_loss: 0.04965 = Recloss: 0.01559 + Divloss: 0.23282
+09/27 05:52 - Batch 276 / 277, Total_loss: 0.05216 = Recloss: 0.01774 + Divloss: 0.23536
+09/27 05:53 - Avg Epoch 33 / 150, Total_Loss: 0.04935 = Recloss: 0.01568 + Divloss: 0.23024
+09/27 05:53 - Valid Recall@[1,5,10,20]: 0.50329, 0.61778, 0.64565, 0.67424
+09/27 05:53 - Valid NDCG@[1,5,10,20]: 0.50329, 0.56757, 0.57664, 0.58389
+09/27 05:53 - Valid ACC@[1,5,10,20]: 0.50329, 0.61778, 0.64565, 0.67424
+09/27 05:53 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0033.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 05:54 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.47870205, 0.5439796 , 0.59021108, 0.61663682, 0.64176027]),
+ 'MRR': np.float64(0.5295457449876599),
+ 'NDCG': array([0.47870205, 0.5198876 , 0.54084849, 0.54945699, 0.555841  ]),
+ 'Recall': array([0.47870205, 0.5439796 , 0.59021108, 0.61663682, 0.64176027])}
+09/27 05:54 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 05:54 - Best valid NDCG@5 at epoch 33
+
+09/27 05:54 - Batch 0 / 277, Total_loss: 0.05067 = Recloss: 0.01670 + Divloss: 0.23227
+09/27 06:08 - Batch 138 / 277, Total_loss: 0.05210 = Recloss: 0.01786 + Divloss: 0.23414
+09/27 06:21 - Batch 276 / 277, Total_loss: 0.04961 = Recloss: 0.01789 + Divloss: 0.21684
+09/27 06:22 - Avg Epoch 34 / 150, Total_Loss: 0.04828 = Recloss: 0.01494 + Divloss: 0.22792
+09/27 06:22 - Valid Recall@[1,5,10,20]: 0.52513, 0.62521, 0.65123, 0.67905
+09/27 06:22 - Valid NDCG@[1,5,10,20]: 0.52513, 0.58112, 0.58950, 0.59660
+09/27 06:22 - Valid ACC@[1,5,10,20]: 0.52513, 0.62521, 0.65123, 0.67905
+09/27 06:22 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0034.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 06:23 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.49888762, 0.55439796, 0.59840469, 0.62065223, 0.64577568]),
+ 'MRR': np.float64(0.5439523536068219),
+ 'NDCG': array([0.49888762, 0.53391075, 0.55416085, 0.56132375, 0.56773123]),
+ 'Recall': array([0.49888762, 0.55439796, 0.59840469, 0.62065223, 0.64577568])}
+09/27 06:23 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 06:23 - Best valid NDCG@5 at epoch 34
+
+09/27 06:23 - Batch 0 / 277, Total_loss: 0.04583 = Recloss: 0.01383 + Divloss: 0.21881
+09/27 06:36 - Batch 138 / 277, Total_loss: 0.05002 = Recloss: 0.01853 + Divloss: 0.21526
+09/27 06:50 - Batch 276 / 277, Total_loss: 0.04963 = Recloss: 0.01660 + Divloss: 0.22580
+09/27 06:51 - Avg Epoch 35 / 150, Total_Loss: 0.04629 = Recloss: 0.01384 + Divloss: 0.22181
+09/27 06:51 - Valid Recall@[1,5,10,20]: 0.52284, 0.62951, 0.65648, 0.68363
+09/27 06:51 - Valid NDCG@[1,5,10,20]: 0.52284, 0.58254, 0.59124, 0.59814
+09/27 06:51 - Valid ACC@[1,5,10,20]: 0.52284, 0.62951, 0.65648, 0.68363
+09/27 06:51 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0035.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 06:52 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.49991861, 0.55971567, 0.60046666, 0.62580715, 0.65125617]),
+ 'MRR': np.float64(0.5464717520045618),
+ 'NDCG': array([0.49991861, 0.53764635, 0.55623174, 0.56447593, 0.57091113]),
+ 'Recall': array([0.49991861, 0.55971567, 0.60046666, 0.62580715, 0.65125617])}
+09/27 06:52 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 06:52 - Best valid NDCG@5 at epoch 35
+
+09/27 06:52 - Batch 0 / 277, Total_loss: 0.04544 = Recloss: 0.01364 + Divloss: 0.21744
+09/27 07:05 - Batch 138 / 277, Total_loss: 0.04392 = Recloss: 0.01173 + Divloss: 0.22009
+09/27 07:19 - Batch 276 / 277, Total_loss: 0.04273 = Recloss: 0.01086 + Divloss: 0.21795
+09/27 07:20 - Avg Epoch 36 / 150, Total_Loss: 0.04530 = Recloss: 0.01300 + Divloss: 0.22085
+09/27 07:20 - Valid Recall@[1,5,10,20]: 0.53200, 0.63236, 0.66302, 0.68960
+09/27 07:20 - Valid NDCG@[1,5,10,20]: 0.53200, 0.58847, 0.59836, 0.60509
+09/27 07:20 - Valid ACC@[1,5,10,20]: 0.53200, 0.63236, 0.66302, 0.68960
+09/27 07:20 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0036.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 07:21 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.5053991 , 0.56530468, 0.60437354, 0.63036519, 0.65472896]),
+ 'MRR': np.float64(0.5515753293368002),
+ 'NDCG': array([0.5053991 , 0.54319531, 0.56101228, 0.56949218, 0.57566051]),
+ 'Recall': array([0.5053991 , 0.56530468, 0.60437354, 0.63036519, 0.65472896])}
+09/27 07:21 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 07:21 - Best valid NDCG@5 at epoch 36
+
+09/27 07:21 - Batch 0 / 277, Total_loss: 0.04390 = Recloss: 0.01210 + Divloss: 0.21741
+09/27 07:34 - Batch 138 / 277, Total_loss: 0.04319 = Recloss: 0.01221 + Divloss: 0.21185
+09/27 07:47 - Batch 276 / 277, Total_loss: 0.04484 = Recloss: 0.01311 + Divloss: 0.21697
+09/27 07:49 - Avg Epoch 37 / 150, Total_Loss: 0.04444 = Recloss: 0.01222 + Divloss: 0.22032
+09/27 07:49 - Valid Recall@[1,5,10,20]: 0.54501, 0.63850, 0.66866, 0.69524
+09/27 07:49 - Valid NDCG@[1,5,10,20]: 0.54501, 0.59742, 0.60713, 0.61389
+09/27 07:49 - Valid ACC@[1,5,10,20]: 0.54501, 0.63850, 0.66866, 0.69524
+09/27 07:49 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0037.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 07:50 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.51956156, 0.57197895, 0.61055944, 0.6368224 , 0.66004667]),
+ 'MRR': np.float64(0.5616419126651363),
+ 'NDCG': array([0.51956156, 0.55263325, 0.57014421, 0.57865101, 0.58451536]),
+ 'Recall': array([0.51956156, 0.57197895, 0.61055944, 0.6368224 , 0.66004667])}
+09/27 07:50 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 07:50 - Best valid NDCG@5 at epoch 37
+
+09/27 07:50 - Batch 0 / 277, Total_loss: 0.04479 = Recloss: 0.01289 + Divloss: 0.21811
+09/27 08:03 - Batch 138 / 277, Total_loss: 0.04151 = Recloss: 0.01044 + Divloss: 0.21242
+09/27 08:16 - Batch 276 / 277, Total_loss: 0.04431 = Recloss: 0.01372 + Divloss: 0.20917
+09/27 08:17 - Avg Epoch 38 / 150, Total_Loss: 0.04341 = Recloss: 0.01128 + Divloss: 0.21966
+09/27 08:17 - Valid Recall@[1,5,10,20]: 0.55199, 0.64252, 0.67084, 0.69775
+09/27 08:17 - Valid NDCG@[1,5,10,20]: 0.55199, 0.60272, 0.61192, 0.61879
+09/27 08:17 - Valid ACC@[1,5,10,20]: 0.55199, 0.64252, 0.67084, 0.69775
+09/27 08:17 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0038.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 08:19 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.52373976, 0.5737696 , 0.61517174, 0.63899289, 0.66362798]),
+ 'MRR': np.float64(0.565364932793057),
+ 'NDCG': array([0.52373976, 0.55530508, 0.57416926, 0.58197565, 0.58820216]),
+ 'Recall': array([0.52373976, 0.5737696 , 0.61517174, 0.63899289, 0.66362798])}
+09/27 08:19 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 08:19 - Best valid NDCG@5 at epoch 38
+
+09/27 08:19 - Batch 0 / 277, Total_loss: 0.04442 = Recloss: 0.01193 + Divloss: 0.22217
+09/27 08:32 - Batch 138 / 277, Total_loss: 0.04400 = Recloss: 0.01135 + Divloss: 0.22326
+09/27 08:45 - Batch 276 / 277, Total_loss: 0.04204 = Recloss: 0.01076 + Divloss: 0.21385
+09/27 08:46 - Avg Epoch 39 / 150, Total_Loss: 0.04272 = Recloss: 0.01061 + Divloss: 0.21954
+09/27 08:46 - Valid Recall@[1,5,10,20]: 0.56300, 0.64844, 0.67815, 0.70161
+09/27 08:46 - Valid NDCG@[1,5,10,20]: 0.56300, 0.61013, 0.61975, 0.62572
+09/27 08:46 - Valid ACC@[1,5,10,20]: 0.56300, 0.64844, 0.67815, 0.70161
+09/27 08:46 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0039.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 08:47 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.53508058, 0.58142059, 0.62114059, 0.64599273, 0.66769765]),
+ 'MRR': np.float64(0.5740105509884582),
+ 'NDCG': array([0.53508058, 0.56431787, 0.58225067, 0.59026426, 0.59575902]),
+ 'Recall': array([0.53508058, 0.58142059, 0.62114059, 0.64599273, 0.66769765])}
+09/27 08:47 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 08:47 - Best valid NDCG@5 at epoch 39
+
+09/27 08:47 - Batch 0 / 277, Total_loss: 0.04141 = Recloss: 0.01054 + Divloss: 0.21102
+09/27 09:01 - Batch 138 / 277, Total_loss: 0.04124 = Recloss: 0.00835 + Divloss: 0.22484
+09/27 09:14 - Batch 276 / 277, Total_loss: 0.04106 = Recloss: 0.00942 + Divloss: 0.21631
+09/27 09:15 - Avg Epoch 40 / 150, Total_Loss: 0.04186 = Recloss: 0.00982 + Divloss: 0.21906
+09/27 09:15 - Valid Recall@[1,5,10,20]: 0.56825, 0.65397, 0.68184, 0.70546
+09/27 09:15 - Valid NDCG@[1,5,10,20]: 0.56825, 0.61557, 0.62461, 0.63061
+09/27 09:15 - Valid ACC@[1,5,10,20]: 0.56825, 0.65397, 0.68184, 0.70546
+09/27 09:15 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0040.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 09:16 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.53925878, 0.58782354, 0.6255901 , 0.64800043, 0.67182159]),
+ 'MRR': np.float64(0.578709066888755),
+ 'NDCG': array([0.53925878, 0.56989973, 0.58698081, 0.5942772 , 0.60033126]),
+ 'Recall': array([0.53925878, 0.58782354, 0.6255901 , 0.64800043, 0.67182159])}
+09/27 09:16 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 09:16 - Best valid NDCG@5 at epoch 40
+
+09/27 09:16 - Batch 0 / 277, Total_loss: 0.04176 = Recloss: 0.00979 + Divloss: 0.21858
+09/27 09:30 - Batch 138 / 277, Total_loss: 0.04166 = Recloss: 0.01065 + Divloss: 0.21200
+09/27 09:43 - Batch 276 / 277, Total_loss: 0.04066 = Recloss: 0.00905 + Divloss: 0.21610
+09/27 09:44 - Avg Epoch 41 / 150, Total_Loss: 0.04098 = Recloss: 0.00915 + Divloss: 0.21767
+09/27 09:44 - Valid Recall@[1,5,10,20]: 0.57556, 0.66118, 0.68703, 0.70915
+09/27 09:44 - Valid NDCG@[1,5,10,20]: 0.57556, 0.62253, 0.63094, 0.63653
+09/27 09:44 - Valid ACC@[1,5,10,20]: 0.57556, 0.66118, 0.68703, 0.70915
+09/27 09:44 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0041.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 09:45 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.5477237 , 0.59471485, 0.63210158, 0.65304683, 0.67513159]),
+ 'MRR': np.float64(0.5859658860115748),
+ 'NDCG': array([0.5477237 , 0.57737181, 0.594344  , 0.60112181, 0.60670212]),
+ 'Recall': array([0.5477237 , 0.59471485, 0.63210158, 0.65304683, 0.67513159])}
+09/27 09:45 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 09:45 - Best valid NDCG@5 at epoch 41
+
+09/27 09:45 - Batch 0 / 277, Total_loss: 0.03852 = Recloss: 0.00720 + Divloss: 0.21419
+09/27 09:59 - Batch 138 / 277, Total_loss: 0.03861 = Recloss: 0.00753 + Divloss: 0.21254
+09/27 10:12 - Batch 276 / 277, Total_loss: 0.04014 = Recloss: 0.00810 + Divloss: 0.21907
+09/27 10:13 - Avg Epoch 42 / 150, Total_Loss: 0.04045 = Recloss: 0.00867 + Divloss: 0.21731
+09/27 10:13 - Valid Recall@[1,5,10,20]: 0.57953, 0.66346, 0.69055, 0.71272
+09/27 10:13 - Valid NDCG@[1,5,10,20]: 0.57953, 0.62557, 0.63440, 0.64005
+09/27 10:13 - Valid ACC@[1,5,10,20]: 0.57953, 0.66346, 0.69055, 0.71272
+09/27 10:13 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0042.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 10:14 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.55092517, 0.59542026, 0.63383797, 0.65695371, 0.68001519]),
+ 'MRR': np.float64(0.5887059364771837),
+ 'NDCG': array([0.55092517, 0.57899845, 0.5965665 , 0.60403876, 0.6098633 ]),
+ 'Recall': array([0.55092517, 0.59542026, 0.63383797, 0.65695371, 0.68001519])}
+09/27 10:14 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 10:14 - Best valid NDCG@5 at epoch 42
+
+09/27 10:14 - Batch 0 / 277, Total_loss: 0.03954 = Recloss: 0.00886 + Divloss: 0.20979
+09/27 10:28 - Batch 138 / 277, Total_loss: 0.03677 = Recloss: 0.00636 + Divloss: 0.20787
+09/27 10:41 - Batch 276 / 277, Total_loss: 0.03978 = Recloss: 0.00846 + Divloss: 0.21420
+09/27 10:42 - Avg Epoch 43 / 150, Total_Loss: 0.03981 = Recloss: 0.00805 + Divloss: 0.21715
+09/27 10:42 - Valid Recall@[1,5,10,20]: 0.58394, 0.66855, 0.69424, 0.71518
+09/27 10:42 - Valid NDCG@[1,5,10,20]: 0.58394, 0.63030, 0.63865, 0.64398
+09/27 10:42 - Valid ACC@[1,5,10,20]: 0.58394, 0.66855, 0.69424, 0.71518
+09/27 10:42 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0043.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 10:43 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.5567855 , 0.60079223, 0.63807043, 0.66118617, 0.68354224]),
+ 'MRR': np.float64(0.5938085934577654),
+ 'NDCG': array([0.5567855 , 0.58455066, 0.60147415, 0.60896176, 0.6146011 ]),
+ 'Recall': array([0.5567855 , 0.60079223, 0.63807043, 0.66118617, 0.68354224])}
+09/27 10:43 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 10:43 - Best valid NDCG@5 at epoch 43
+
+09/27 10:43 - Batch 0 / 277, Total_loss: 0.04140 = Recloss: 0.00928 + Divloss: 0.21960
+09/27 10:57 - Batch 138 / 277, Total_loss: 0.03795 = Recloss: 0.00616 + Divloss: 0.21732
+09/27 11:10 - Batch 276 / 277, Total_loss: 0.03961 = Recloss: 0.00823 + Divloss: 0.21448
+09/27 11:11 - Avg Epoch 44 / 150, Total_Loss: 0.03928 = Recloss: 0.00755 + Divloss: 0.21690
+09/27 11:11 - Valid Recall@[1,5,10,20]: 0.58969, 0.67274, 0.69820, 0.72015
+09/27 11:11 - Valid NDCG@[1,5,10,20]: 0.58969, 0.63491, 0.64323, 0.64881
+09/27 11:11 - Valid ACC@[1,5,10,20]: 0.58969, 0.67274, 0.69820, 0.72015
+09/27 11:11 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0044.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 11:12 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.56210321, 0.60556731, 0.64062076, 0.66471322, 0.68668946]),
+ 'MRR': np.float64(0.5981961605185736),
+ 'NDCG': array([0.56210321, 0.589526  , 0.60530478, 0.61306364, 0.61867894]),
+ 'Recall': array([0.56210321, 0.60556731, 0.64062076, 0.66471322, 0.68668946])}
+09/27 11:12 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 11:12 - Best valid NDCG@5 at epoch 44
+
+09/27 11:12 - Batch 0 / 277, Total_loss: 0.03706 = Recloss: 0.00634 + Divloss: 0.20998
+09/27 11:26 - Batch 138 / 277, Total_loss: 0.03760 = Recloss: 0.00610 + Divloss: 0.21534
+09/27 11:39 - Batch 276 / 277, Total_loss: 0.03831 = Recloss: 0.00711 + Divloss: 0.21328
+09/27 11:40 - Avg Epoch 45 / 150, Total_Loss: 0.03877 = Recloss: 0.00713 + Divloss: 0.21632
+09/27 11:40 - Valid Recall@[1,5,10,20]: 0.59589, 0.67530, 0.70256, 0.72283
+09/27 11:40 - Valid NDCG@[1,5,10,20]: 0.59589, 0.63926, 0.64817, 0.65334
+09/27 11:40 - Valid ACC@[1,5,10,20]: 0.59589, 0.67530, 0.70256, 0.72283
+09/27 11:40 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0045.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 11:41 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.56899452, 0.60882305, 0.64393076, 0.66905421, 0.69070487]),
+ 'MRR': np.float64(0.6035757453689075),
+ 'NDCG': array([0.56899452, 0.59412352, 0.61005063, 0.61819981, 0.62369603]),
+ 'Recall': array([0.56899452, 0.60882305, 0.64393076, 0.66905421, 0.69070487])}
+09/27 11:41 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 11:41 - Best valid NDCG@5 at epoch 45
+
+09/27 11:41 - Batch 0 / 277, Total_loss: 0.03895 = Recloss: 0.00758 + Divloss: 0.21448
+09/27 11:55 - Batch 138 / 277, Total_loss: 0.03855 = Recloss: 0.00715 + Divloss: 0.21473
+09/27 12:08 - Batch 276 / 277, Total_loss: 0.03606 = Recloss: 0.00547 + Divloss: 0.20917
+09/27 12:09 - Avg Epoch 46 / 150, Total_Loss: 0.03834 = Recloss: 0.00674 + Divloss: 0.21605
+09/27 12:09 - Valid Recall@[1,5,10,20]: 0.60170, 0.68044, 0.70608, 0.72501
+09/27 12:09 - Valid NDCG@[1,5,10,20]: 0.60170, 0.64472, 0.65311, 0.65791
+09/27 12:09 - Valid ACC@[1,5,10,20]: 0.60170, 0.68044, 0.70608, 0.72501
+09/27 12:09 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0046.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 12:10 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.57366108, 0.61490043, 0.64957404, 0.67258126, 0.69265831]),
+ 'MRR': np.float64(0.6082383882380026),
+ 'NDCG': array([0.57366108, 0.59968021, 0.61524157, 0.62273688, 0.62780565]),
+ 'Recall': array([0.57366108, 0.61490043, 0.64957404, 0.67258126, 0.69265831])}
+09/27 12:10 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 12:10 - Best valid NDCG@5 at epoch 46
+
+09/27 12:10 - Batch 0 / 277, Total_loss: 0.03854 = Recloss: 0.00639 + Divloss: 0.21975
+09/27 12:23 - Batch 138 / 277, Total_loss: 0.03552 = Recloss: 0.00500 + Divloss: 0.20867
+09/27 12:37 - Batch 276 / 277, Total_loss: 0.03739 = Recloss: 0.00691 + Divloss: 0.20840
+09/27 12:38 - Avg Epoch 47 / 150, Total_Loss: 0.03791 = Recloss: 0.00635 + Divloss: 0.21573
+09/27 12:38 - Valid Recall@[1,5,10,20]: 0.60516, 0.68513, 0.70898, 0.72702
+09/27 12:38 - Valid NDCG@[1,5,10,20]: 0.60516, 0.64882, 0.65655, 0.66114
+09/27 12:38 - Valid ACC@[1,5,10,20]: 0.60516, 0.68513, 0.70898, 0.72702
+09/27 12:38 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0047.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 12:39 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.57952141, 0.61799338, 0.65418634, 0.67627109, 0.69499159]),
+ 'MRR': np.float64(0.6129979725997063),
+ 'NDCG': array([0.57952141, 0.60379452, 0.62013   , 0.6272607 , 0.63203776]),
+ 'Recall': array([0.57952141, 0.61799338, 0.65418634, 0.67627109, 0.69499159])}
+09/27 12:39 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 12:39 - Best valid NDCG@5 at epoch 47
+
+09/27 12:39 - Batch 0 / 277, Total_loss: 0.03626 = Recloss: 0.00594 + Divloss: 0.20732
+09/27 12:52 - Batch 138 / 277, Total_loss: 0.03775 = Recloss: 0.00545 + Divloss: 0.22083
+09/27 13:06 - Batch 276 / 277, Total_loss: 0.03722 = Recloss: 0.00532 + Divloss: 0.21808
+09/27 13:07 - Avg Epoch 48 / 150, Total_Loss: 0.03747 = Recloss: 0.00602 + Divloss: 0.21503
+09/27 13:07 - Valid Recall@[1,5,10,20]: 0.61097, 0.68848, 0.71244, 0.72903
+09/27 13:07 - Valid NDCG@[1,5,10,20]: 0.61097, 0.65320, 0.66104, 0.66527
+09/27 13:07 - Valid ACC@[1,5,10,20]: 0.61097, 0.68848, 0.71244, 0.72903
+09/27 13:07 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0048.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 13:08 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.58304846, 0.62249715, 0.6571165 , 0.67963536, 0.6977047 ]),
+ 'MRR': np.float64(0.6166513103590012),
+ 'NDCG': array([0.58304846, 0.60793781, 0.62360054, 0.63089633, 0.63549525]),
+ 'Recall': array([0.58304846, 0.62249715, 0.6571165 , 0.67963536, 0.6977047 ])}
+09/27 13:08 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 13:08 - Best valid NDCG@5 at epoch 48
+
+09/27 13:08 - Batch 0 / 277, Total_loss: 0.03730 = Recloss: 0.00606 + Divloss: 0.21362
+09/27 13:21 - Batch 138 / 277, Total_loss: 0.03502 = Recloss: 0.00444 + Divloss: 0.20910
+09/27 13:35 - Batch 276 / 277, Total_loss: 0.03756 = Recloss: 0.00506 + Divloss: 0.22216
+09/27 13:36 - Avg Epoch 49 / 150, Total_Loss: 0.03707 = Recloss: 0.00566 + Divloss: 0.21472
+09/27 13:36 - Valid Recall@[1,5,10,20]: 0.61739, 0.69273, 0.71563, 0.73121
+09/27 13:36 - Valid NDCG@[1,5,10,20]: 0.61739, 0.65827, 0.66574, 0.66970
+09/27 13:36 - Valid ACC@[1,5,10,20]: 0.61739, 0.69273, 0.71563, 0.73121
+09/27 13:36 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0049.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 13:37 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.58999403, 0.62613273, 0.66010093, 0.68234847, 0.69808454]),
+ 'MRR': np.float64(0.6217279822130821),
+ 'NDCG': array([0.58999403, 0.61279501, 0.62822586, 0.6355208 , 0.63953645]),
+ 'Recall': array([0.58999403, 0.62613273, 0.66010093, 0.68234847, 0.69808454])}
+09/27 13:37 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 13:37 - Best valid NDCG@5 at epoch 49
+
+09/27 13:37 - Batch 0 / 277, Total_loss: 0.03629 = Recloss: 0.00537 + Divloss: 0.21139
+09/27 13:50 - Batch 138 / 277, Total_loss: 0.03666 = Recloss: 0.00487 + Divloss: 0.21734
+09/27 14:04 - Batch 276 / 277, Total_loss: 0.03657 = Recloss: 0.00557 + Divloss: 0.21194
+09/27 14:05 - Avg Epoch 50 / 150, Total_Loss: 0.03668 = Recloss: 0.00532 + Divloss: 0.21442
+09/27 14:05 - Valid Recall@[1,5,10,20]: 0.62342, 0.69552, 0.71780, 0.73277
+09/27 14:05 - Valid NDCG@[1,5,10,20]: 0.62342, 0.66279, 0.67009, 0.67391
+09/27 14:05 - Valid ACC@[1,5,10,20]: 0.62342, 0.69552, 0.71780, 0.73277
+09/27 14:05 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0050.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 14:06 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.59851321, 0.63172174, 0.66476749, 0.6844647 , 0.69965815]),
+ 'MRR': np.float64(0.627929417636494),
+ 'NDCG': array([0.59851321, 0.61946546, 0.63429582, 0.64074185, 0.64464206]),
+ 'Recall': array([0.59851321, 0.63172174, 0.66476749, 0.6844647 , 0.69965815])}
+09/27 14:06 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 14:06 - Best valid NDCG@5 at epoch 50
+
+09/27 14:06 - Batch 0 / 277, Total_loss: 0.03496 = Recloss: 0.00459 + Divloss: 0.20763
+09/27 14:20 - Batch 138 / 277, Total_loss: 0.03467 = Recloss: 0.00401 + Divloss: 0.20958
+09/27 14:33 - Batch 276 / 277, Total_loss: 0.03598 = Recloss: 0.00467 + Divloss: 0.21407
+09/27 14:34 - Avg Epoch 51 / 150, Total_Loss: 0.03638 = Recloss: 0.00512 + Divloss: 0.21377
+09/27 14:34 - Valid Recall@[1,5,10,20]: 0.62538, 0.69949, 0.72021, 0.73528
+09/27 14:34 - Valid NDCG@[1,5,10,20]: 0.62538, 0.66572, 0.67245, 0.67630
+09/27 14:34 - Valid ACC@[1,5,10,20]: 0.62538, 0.69949, 0.72021, 0.73528
+09/27 14:34 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0051.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 14:35 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.60149764, 0.63448912, 0.66737208, 0.68663519, 0.70209995]),
+ 'MRR': np.float64(0.6307318669958176),
+ 'NDCG': array([0.60149764, 0.62231295, 0.6371243 , 0.64340368, 0.64734102]),
+ 'Recall': array([0.60149764, 0.63448912, 0.66737208, 0.68663519, 0.70209995])}
+09/27 14:35 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 14:35 - Best valid NDCG@5 at epoch 51
+
+09/27 14:35 - Batch 0 / 277, Total_loss: 0.03554 = Recloss: 0.00442 + Divloss: 0.21273
+09/27 14:49 - Batch 138 / 277, Total_loss: 0.03644 = Recloss: 0.00484 + Divloss: 0.21606
+09/27 15:02 - Batch 276 / 277, Total_loss: 0.03666 = Recloss: 0.00555 + Divloss: 0.21271
+09/27 15:03 - Avg Epoch 52 / 150, Total_Loss: 0.03614 = Recloss: 0.00486 + Divloss: 0.21390
+09/27 15:03 - Valid Recall@[1,5,10,20]: 0.63241, 0.70211, 0.72300, 0.73573
+09/27 15:03 - Valid NDCG@[1,5,10,20]: 0.63241, 0.67036, 0.67718, 0.68043
+09/27 15:03 - Valid ACC@[1,5,10,20]: 0.63241, 0.70211, 0.72300, 0.73573
+09/27 15:03 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0052.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 15:04 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.60708666, 0.63899289, 0.6707906 , 0.69075913, 0.70291389]),
+ 'MRR': np.float64(0.6352530636931808),
+ 'NDCG': array([0.60708666, 0.62721725, 0.64147945, 0.64796902, 0.65106438]),
+ 'Recall': array([0.60708666, 0.63899289, 0.6707906 , 0.69075913, 0.70291389])}
+09/27 15:04 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 15:04 - Best valid NDCG@5 at epoch 52
+
+09/27 15:04 - Batch 0 / 277, Total_loss: 0.03561 = Recloss: 0.00385 + Divloss: 0.21715
+09/27 15:18 - Batch 138 / 277, Total_loss: 0.03526 = Recloss: 0.00451 + Divloss: 0.21025
+09/27 15:31 - Batch 276 / 277, Total_loss: 0.03413 = Recloss: 0.00408 + Divloss: 0.20545
+09/27 15:32 - Avg Epoch 53 / 150, Total_Loss: 0.03585 = Recloss: 0.00458 + Divloss: 0.21377
+09/27 15:32 - Valid Recall@[1,5,10,20]: 0.63543, 0.70496, 0.72495, 0.73679
+09/27 15:32 - Valid NDCG@[1,5,10,20]: 0.63543, 0.67351, 0.68008, 0.68307
+09/27 15:32 - Valid ACC@[1,5,10,20]: 0.63543, 0.70496, 0.72495, 0.73679
+09/27 15:32 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0053.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 15:33 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.60925715, 0.64241142, 0.67317814, 0.69162733, 0.70372782]),
+ 'MRR': np.float64(0.6378376469835713),
+ 'NDCG': array([0.60925715, 0.63017516, 0.6441496 , 0.65020897, 0.65330144]),
+ 'Recall': array([0.60925715, 0.64241142, 0.67317814, 0.69162733, 0.70372782])}
+09/27 15:33 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 15:33 - Best valid NDCG@5 at epoch 53
+
+09/27 15:33 - Batch 0 / 277, Total_loss: 0.03607 = Recloss: 0.00537 + Divloss: 0.20990
+09/27 15:47 - Batch 138 / 277, Total_loss: 0.03586 = Recloss: 0.00392 + Divloss: 0.21838
+09/27 16:00 - Batch 276 / 277, Total_loss: 0.03734 = Recloss: 0.00551 + Divloss: 0.21760
+09/27 16:01 - Avg Epoch 54 / 150, Total_Loss: 0.03560 = Recloss: 0.00439 + Divloss: 0.21341
+09/27 16:01 - Valid Recall@[1,5,10,20]: 0.63979, 0.70831, 0.72635, 0.73802
+09/27 16:01 - Valid NDCG@[1,5,10,20]: 0.63979, 0.67708, 0.68302, 0.68601
+09/27 16:01 - Valid ACC@[1,5,10,20]: 0.63979, 0.70831, 0.72635, 0.73802
+09/27 16:01 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0054.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 16:02 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.61327256, 0.64648109, 0.67654241, 0.69352651, 0.70470454]),
+ 'MRR': np.float64(0.6412016642420432),
+ 'NDCG': array([0.61327256, 0.63422481, 0.64774317, 0.65328403, 0.65612372]),
+ 'Recall': array([0.61327256, 0.64648109, 0.67654241, 0.69352651, 0.70470454])}
+09/27 16:02 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 16:02 - Best valid NDCG@5 at epoch 54
+
+09/27 16:02 - Batch 0 / 277, Total_loss: 0.03517 = Recloss: 0.00393 + Divloss: 0.21358
+09/27 16:15 - Batch 138 / 277, Total_loss: 0.03514 = Recloss: 0.00494 + Divloss: 0.20644
+09/27 16:29 - Batch 276 / 277, Total_loss: 0.03498 = Recloss: 0.00370 + Divloss: 0.21390
+09/27 16:30 - Avg Epoch 55 / 150, Total_Loss: 0.03542 = Recloss: 0.00421 + Divloss: 0.21343
+09/27 16:30 - Valid Recall@[1,5,10,20]: 0.64515, 0.71032, 0.72724, 0.73925
+09/27 16:30 - Valid NDCG@[1,5,10,20]: 0.64515, 0.68079, 0.68634, 0.68941
+09/27 16:30 - Valid ACC@[1,5,10,20]: 0.64515, 0.71032, 0.72724, 0.73925
+09/27 16:30 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0055.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 16:31 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.61728797, 0.64989961, 0.67936405, 0.69493733, 0.70568126]),
+ 'MRR': np.float64(0.6446528839756152),
+ 'NDCG': array([0.61728797, 0.63786363, 0.65118298, 0.65628105, 0.6590374 ]),
+ 'Recall': array([0.61728797, 0.64989961, 0.67936405, 0.69493733, 0.70568126])}
+09/27 16:31 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 16:31 - Best valid NDCG@5 at epoch 55
+
+09/27 16:31 - Batch 0 / 277, Total_loss: 0.03659 = Recloss: 0.00473 + Divloss: 0.21781
+09/27 16:45 - Batch 138 / 277, Total_loss: 0.03319 = Recloss: 0.00309 + Divloss: 0.20584
+09/27 16:58 - Batch 276 / 277, Total_loss: 0.03530 = Recloss: 0.00399 + Divloss: 0.21407
+09/27 16:59 - Avg Epoch 56 / 150, Total_Loss: 0.03521 = Recloss: 0.00402 + Divloss: 0.21321
+09/27 16:59 - Valid Recall@[1,5,10,20]: 0.64827, 0.71406, 0.72897, 0.73908
+09/27 16:59 - Valid NDCG@[1,5,10,20]: 0.64827, 0.68425, 0.68915, 0.69173
+09/27 16:59 - Valid ACC@[1,5,10,20]: 0.64827, 0.71406, 0.72897, 0.73908
+09/27 16:59 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0056.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 17:00 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.6194042 , 0.6533724 , 0.68251126, 0.6965652 , 0.70638667]),
+ 'MRR': np.float64(0.6469379237893769),
+ 'NDCG': array([0.6194042 , 0.64083575, 0.65391052, 0.65849392, 0.66099914]),
+ 'Recall': array([0.6194042 , 0.6533724 , 0.68251126, 0.6965652 , 0.70638667])}
+09/27 17:00 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 17:00 - Best valid NDCG@5 at epoch 56
+
+09/27 17:01 - Batch 0 / 277, Total_loss: 0.03354 = Recloss: 0.00287 + Divloss: 0.20967
+09/27 17:14 - Batch 138 / 277, Total_loss: 0.03432 = Recloss: 0.00359 + Divloss: 0.21012
+09/27 17:27 - Batch 276 / 277, Total_loss: 0.03618 = Recloss: 0.00427 + Divloss: 0.21815
+09/27 17:29 - Avg Epoch 57 / 150, Total_Loss: 0.03487 = Recloss: 0.00382 + Divloss: 0.21224
+09/27 17:29 - Valid Recall@[1,5,10,20]: 0.65291, 0.71646, 0.73059, 0.73975
+09/27 17:29 - Valid NDCG@[1,5,10,20]: 0.65291, 0.68773, 0.69232, 0.69465
+09/27 17:29 - Valid ACC@[1,5,10,20]: 0.65291, 0.71646, 0.73059, 0.73975
+09/27 17:29 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0057.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 17:30 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.62461338, 0.65635683, 0.6853329 , 0.69727061, 0.70654946]),
+ 'MRR': np.float64(0.650882772396879),
+ 'NDCG': array([0.62461338, 0.64464127, 0.65783881, 0.66172374, 0.66408414]),
+ 'Recall': array([0.62461338, 0.65635683, 0.6853329 , 0.69727061, 0.70654946])}
+09/27 17:30 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 17:30 - Best valid NDCG@5 at epoch 57
+
+09/27 17:30 - Batch 0 / 277, Total_loss: 0.03540 = Recloss: 0.00417 + Divloss: 0.21354
+09/27 17:43 - Batch 138 / 277, Total_loss: 0.03444 = Recloss: 0.00429 + Divloss: 0.20614
+09/27 17:56 - Batch 276 / 277, Total_loss: 0.03475 = Recloss: 0.00378 + Divloss: 0.21170
+09/27 17:58 - Avg Epoch 58 / 150, Total_Loss: 0.03472 = Recloss: 0.00370 + Divloss: 0.21204
+09/27 17:58 - Valid Recall@[1,5,10,20]: 0.65559, 0.71898, 0.73149, 0.74059
+09/27 17:58 - Valid NDCG@[1,5,10,20]: 0.65559, 0.69024, 0.69438, 0.69671
+09/27 17:58 - Valid ACC@[1,5,10,20]: 0.65559, 0.71898, 0.73149, 0.74059
+09/27 17:58 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0058.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 17:59 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.62710945, 0.65814748, 0.68663519, 0.699007  , 0.70768897]),
+ 'MRR': np.float64(0.6530107323769709),
+ 'NDCG': array([0.62710945, 0.64669227, 0.65972311, 0.66378515, 0.66600301]),
+ 'Recall': array([0.62710945, 0.65814748, 0.68663519, 0.699007  , 0.70768897])}
+09/27 17:59 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 17:59 - Best valid NDCG@5 at epoch 58
+
+09/27 17:59 - Batch 0 / 277, Total_loss: 0.03355 = Recloss: 0.00252 + Divloss: 0.21216
+09/27 18:12 - Batch 138 / 277, Total_loss: 0.03423 = Recloss: 0.00409 + Divloss: 0.20605
+09/27 18:26 - Batch 276 / 277, Total_loss: 0.03540 = Recloss: 0.00434 + Divloss: 0.21237
+09/27 18:27 - Avg Epoch 59 / 150, Total_Loss: 0.03453 = Recloss: 0.00357 + Divloss: 0.21169
+09/27 18:27 - Valid Recall@[1,5,10,20]: 0.65704, 0.72160, 0.73439, 0.74210
+09/27 18:27 - Valid NDCG@[1,5,10,20]: 0.65704, 0.69261, 0.69679, 0.69875
+09/27 18:27 - Valid ACC@[1,5,10,20]: 0.65704, 0.72160, 0.73439, 0.74210
+09/27 18:27 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0059.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 18:28 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.62971404, 0.66270552, 0.68804601, 0.70166585, 0.70920831]),
+ 'MRR': np.float64(0.6557706937472827),
+ 'NDCG': array([0.62971404, 0.65052934, 0.66212238, 0.66657128, 0.66849182]),
+ 'Recall': array([0.62971404, 0.66270552, 0.68804601, 0.70166585, 0.70920831])}
+09/27 18:28 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 18:28 - Best valid NDCG@5 at epoch 59
+
+09/27 18:28 - Batch 0 / 277, Total_loss: 0.03238 = Recloss: 0.00268 + Divloss: 0.20307
+09/27 18:41 - Batch 138 / 277, Total_loss: 0.03675 = Recloss: 0.00518 + Divloss: 0.21582
+09/27 18:54 - Batch 276 / 277, Total_loss: 0.03347 = Recloss: 0.00384 + Divloss: 0.20261
+09/27 18:56 - Avg Epoch 60 / 150, Total_Loss: 0.03435 = Recloss: 0.00339 + Divloss: 0.21170
+09/27 18:56 - Valid Recall@[1,5,10,20]: 0.65983, 0.72311, 0.73568, 0.74260
+09/27 18:56 - Valid NDCG@[1,5,10,20]: 0.65983, 0.69475, 0.69888, 0.70064
+09/27 18:56 - Valid ACC@[1,5,10,20]: 0.65983, 0.72311, 0.73568, 0.74260
+09/27 18:56 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0060.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 18:57 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.63128764, 0.66411634, 0.6899452 , 0.70313093, 0.71029356]),
+ 'MRR': np.float64(0.657337259576641),
+ 'NDCG': array([0.63128764, 0.65200024, 0.66386557, 0.66815035, 0.66995641]),
+ 'Recall': array([0.63128764, 0.66411634, 0.6899452 , 0.70313093, 0.71029356])}
+09/27 18:57 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 18:57 - Best valid NDCG@5 at epoch 60
+
+09/27 18:57 - Batch 0 / 277, Total_loss: 0.03321 = Recloss: 0.00274 + Divloss: 0.20832
+09/27 19:10 - Batch 138 / 277, Total_loss: 0.03310 = Recloss: 0.00281 + Divloss: 0.20705
+09/27 19:23 - Batch 276 / 277, Total_loss: 0.03454 = Recloss: 0.00392 + Divloss: 0.20938
+09/27 19:25 - Avg Epoch 61 / 150, Total_Loss: 0.03423 = Recloss: 0.00328 + Divloss: 0.21161
+09/27 19:25 - Valid Recall@[1,5,10,20]: 0.66279, 0.72579, 0.73612, 0.74377
+09/27 19:25 - Valid NDCG@[1,5,10,20]: 0.66279, 0.69731, 0.70071, 0.70265
+09/27 19:25 - Valid ACC@[1,5,10,20]: 0.66279, 0.72579, 0.73612, 0.74377
+09/27 19:25 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0061.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 19:26 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.63644256, 0.66617831, 0.69162733, 0.70340225, 0.71018503]),
+ 'MRR': np.float64(0.6607034133734614),
+ 'NDCG': array([0.63644256, 0.65520373, 0.66688748, 0.67079113, 0.67252082]),
+ 'Recall': array([0.63644256, 0.66617831, 0.69162733, 0.70340225, 0.71018503])}
+09/27 19:26 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 19:26 - Best valid NDCG@5 at epoch 61
+
+09/27 19:26 - Batch 0 / 277, Total_loss: 0.03387 = Recloss: 0.00355 + Divloss: 0.20730
+09/27 19:39 - Batch 138 / 277, Total_loss: 0.03294 = Recloss: 0.00275 + Divloss: 0.20645
+09/27 19:53 - Batch 276 / 277, Total_loss: 0.03404 = Recloss: 0.00308 + Divloss: 0.21169
+09/27 19:54 - Avg Epoch 62 / 150, Total_Loss: 0.03407 = Recloss: 0.00313 + Divloss: 0.21148
+09/27 19:54 - Valid Recall@[1,5,10,20]: 0.66899, 0.72484, 0.73584, 0.74254
+09/27 19:54 - Valid NDCG@[1,5,10,20]: 0.66899, 0.69975, 0.70338, 0.70508
+09/27 19:54 - Valid ACC@[1,5,10,20]: 0.66899, 0.72484, 0.73584, 0.74254
+09/27 19:54 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0062.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 19:55 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.64051224, 0.66910847, 0.69292962, 0.70405339, 0.71002225]),
+ 'MRR': np.float64(0.6634256285172757),
+ 'NDCG': array([0.64051224, 0.65855445, 0.66942522, 0.6730388 , 0.67454215]),
+ 'Recall': array([0.64051224, 0.66910847, 0.69292962, 0.70405339, 0.71002225])}
+09/27 19:55 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 19:55 - Best valid NDCG@5 at epoch 62
+
+09/27 19:55 - Batch 0 / 277, Total_loss: 0.03442 = Recloss: 0.00278 + Divloss: 0.21630
+09/27 20:09 - Batch 138 / 277, Total_loss: 0.03371 = Recloss: 0.00252 + Divloss: 0.21328
+09/27 20:22 - Batch 276 / 277, Total_loss: 0.03487 = Recloss: 0.00323 + Divloss: 0.21634
+09/27 20:23 - Avg Epoch 63 / 150, Total_Loss: 0.03427 = Recloss: 0.00306 + Divloss: 0.21335
+09/27 20:23 - Valid Recall@[1,5,10,20]: 0.67095, 0.72719, 0.73729, 0.74372
+09/27 20:23 - Valid NDCG@[1,5,10,20]: 0.67095, 0.70207, 0.70539, 0.70703
+09/27 20:23 - Valid ACC@[1,5,10,20]: 0.67095, 0.72719, 0.73729, 0.74372
+09/27 20:23 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0063.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 20:24 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.64311683, 0.67100765, 0.695697  , 0.70486733, 0.71056487]),
+ 'MRR': np.float64(0.665667159820076),
+ 'NDCG': array([0.64311683, 0.66071398, 0.67196043, 0.67499033, 0.67642792]),
+ 'Recall': array([0.64311683, 0.67100765, 0.695697  , 0.70486733, 0.71056487])}
+09/27 20:24 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 20:24 - Best valid NDCG@5 at epoch 63
+
+09/27 20:24 - Batch 0 / 277, Total_loss: 0.03455 = Recloss: 0.00278 + Divloss: 0.21722
+09/27 20:38 - Batch 138 / 277, Total_loss: 0.03310 = Recloss: 0.00281 + Divloss: 0.20711
+09/27 20:51 - Batch 276 / 277, Total_loss: 0.03496 = Recloss: 0.00317 + Divloss: 0.21732
+09/27 20:52 - Avg Epoch 64 / 150, Total_Loss: 0.03387 = Recloss: 0.00298 + Divloss: 0.21116
+09/27 20:52 - Valid Recall@[1,5,10,20]: 0.67536, 0.72741, 0.73601, 0.74338
+09/27 20:52 - Valid NDCG@[1,5,10,20]: 0.67536, 0.70426, 0.70710, 0.70897
+09/27 20:52 - Valid ACC@[1,5,10,20]: 0.67536, 0.72741, 0.73601, 0.74338
+09/27 20:52 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0064.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 20:54 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.64490748, 0.67236421, 0.69623962, 0.70459602, 0.70991372]),
+ 'MRR': np.float64(0.6670216603266989),
+ 'NDCG': array([0.64490748, 0.66223075, 0.67324491, 0.67599487, 0.67733293]),
+ 'Recall': array([0.64490748, 0.67236421, 0.69623962, 0.70459602, 0.70991372])}
+09/27 20:54 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 20:54 - Best valid NDCG@5 at epoch 64
+
+09/27 20:54 - Batch 0 / 277, Total_loss: 0.03347 = Recloss: 0.00254 + Divloss: 0.21151
+09/27 21:07 - Batch 138 / 277, Total_loss: 0.03383 = Recloss: 0.00259 + Divloss: 0.21358
+09/27 21:21 - Batch 276 / 277, Total_loss: 0.03376 = Recloss: 0.00217 + Divloss: 0.21599
+09/27 21:22 - Avg Epoch 65 / 150, Total_Loss: 0.03373 = Recloss: 0.00290 + Divloss: 0.21078
+09/27 21:22 - Valid Recall@[1,5,10,20]: 0.67620, 0.72735, 0.73707, 0.74254
+09/27 21:22 - Valid NDCG@[1,5,10,20]: 0.67620, 0.70461, 0.70777, 0.70916
+09/27 21:22 - Valid ACC@[1,5,10,20]: 0.67620, 0.72735, 0.73707, 0.74254
+09/27 21:22 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0065.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 21:23 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.64816322, 0.67426339, 0.69596831, 0.7047588 , 0.70996799]),
+ 'MRR': np.float64(0.6690490176635794),
+ 'NDCG': array([0.64816322, 0.66463059, 0.67466427, 0.67754613, 0.6788663 ]),
+ 'Recall': array([0.64816322, 0.67426339, 0.69596831, 0.7047588 , 0.70996799])}
+09/27 21:23 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 21:23 - Best valid NDCG@5 at epoch 65
+
+09/27 21:23 - Batch 0 / 277, Total_loss: 0.03451 = Recloss: 0.00481 + Divloss: 0.20306
+09/27 21:36 - Batch 138 / 277, Total_loss: 0.03265 = Recloss: 0.00325 + Divloss: 0.20102
+09/27 21:50 - Batch 276 / 277, Total_loss: 0.03290 = Recloss: 0.00286 + Divloss: 0.20543
+09/27 21:51 - Avg Epoch 66 / 150, Total_Loss: 0.03380 = Recloss: 0.00281 + Divloss: 0.21189
+09/27 21:51 - Valid Recall@[1,5,10,20]: 0.68368, 0.72942, 0.73802, 0.74361
+09/27 21:51 - Valid NDCG@[1,5,10,20]: 0.68368, 0.70897, 0.71178, 0.71320
+09/27 21:51 - Valid ACC@[1,5,10,20]: 0.68368, 0.72942, 0.73802, 0.74361
+09/27 21:51 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0066.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 21:52 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.65266699, 0.67670519, 0.69775897, 0.70557274, 0.71034782]),
+ 'MRR': np.float64(0.6721885127758469),
+ 'NDCG': array([0.65266699, 0.66783341, 0.67756547, 0.68014278, 0.68135883]),
+ 'Recall': array([0.65266699, 0.67670519, 0.69775897, 0.70557274, 0.71034782])}
+09/27 21:52 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 21:52 - Best valid NDCG@5 at epoch 66
+
+09/27 21:52 - Batch 0 / 277, Total_loss: 0.03324 = Recloss: 0.00349 + Divloss: 0.20344
+09/27 22:05 - Batch 138 / 277, Total_loss: 0.03339 = Recloss: 0.00378 + Divloss: 0.20240
+09/27 22:19 - Batch 276 / 277, Total_loss: 0.03322 = Recloss: 0.00242 + Divloss: 0.21054
+09/27 22:20 - Avg Epoch 67 / 150, Total_Loss: 0.03346 = Recloss: 0.00269 + Divloss: 0.21033
+09/27 22:20 - Valid Recall@[1,5,10,20]: 0.68564, 0.73093, 0.73864, 0.74467
+09/27 22:20 - Valid NDCG@[1,5,10,20]: 0.68564, 0.71072, 0.71324, 0.71477
+09/27 22:20 - Valid ACC@[1,5,10,20]: 0.68564, 0.73093, 0.73864, 0.74467
+09/27 22:20 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0067.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 22:21 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.65608552, 0.67936405, 0.69971241, 0.70714635, 0.71148733]),
+ 'MRR': np.float64(0.674938932772822),
+ 'NDCG': array([0.65608552, 0.67077263, 0.68021715, 0.68262023, 0.68372883]),
+ 'Recall': array([0.65608552, 0.67936405, 0.69971241, 0.70714635, 0.71148733])}
+09/27 22:21 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 22:21 - Best valid NDCG@5 at epoch 67
+
+09/27 22:21 - Batch 0 / 277, Total_loss: 0.03381 = Recloss: 0.00287 + Divloss: 0.21152
+09/27 22:34 - Batch 138 / 277, Total_loss: 0.03367 = Recloss: 0.00231 + Divloss: 0.21442
+09/27 22:48 - Batch 276 / 277, Total_loss: 0.03264 = Recloss: 0.00239 + Divloss: 0.20684
+09/27 22:49 - Avg Epoch 68 / 150, Total_Loss: 0.03352 = Recloss: 0.00262 + Divloss: 0.21122
+09/27 22:49 - Valid Recall@[1,5,10,20]: 0.68787, 0.73283, 0.74025, 0.74489
+09/27 22:49 - Valid NDCG@[1,5,10,20]: 0.68787, 0.71277, 0.71517, 0.71635
+09/27 22:49 - Valid ACC@[1,5,10,20]: 0.68787, 0.73283, 0.74025, 0.74489
+09/27 22:49 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0068.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 22:50 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.65814748, 0.68218569, 0.7014488 , 0.70768897, 0.71230126]),
+ 'MRR': np.float64(0.6768642877999855),
+ 'NDCG': array([0.65814748, 0.6733139 , 0.68218981, 0.68421905, 0.68539882]),
+ 'Recall': array([0.65814748, 0.68218569, 0.7014488 , 0.70768897, 0.71230126])}
+09/27 22:50 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 22:50 - Best valid NDCG@5 at epoch 68
+
+09/27 22:50 - Batch 0 / 277, Total_loss: 0.03254 = Recloss: 0.00208 + Divloss: 0.20824
+09/27 23:04 - Batch 138 / 277, Total_loss: 0.03413 = Recloss: 0.00219 + Divloss: 0.21836
+09/27 23:17 - Batch 276 / 277, Total_loss: 0.03208 = Recloss: 0.00223 + Divloss: 0.20405
+09/27 23:18 - Avg Epoch 69 / 150, Total_Loss: 0.03350 = Recloss: 0.00252 + Divloss: 0.21180
+09/27 23:18 - Valid Recall@[1,5,10,20]: 0.68899, 0.73456, 0.74165, 0.74612
+09/27 23:18 - Valid NDCG@[1,5,10,20]: 0.68899, 0.71417, 0.71647, 0.71760
+09/27 23:18 - Valid ACC@[1,5,10,20]: 0.68899, 0.73456, 0.74165, 0.74612
+09/27 23:18 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0069.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 23:19 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.6579847 , 0.68240273, 0.7027511 , 0.70844864, 0.71240979]),
+ 'MRR': np.float64(0.6771683283591318),
+ 'NDCG': array([0.6579847 , 0.67339076, 0.68282179, 0.68469007, 0.68571095]),
+ 'Recall': array([0.6579847 , 0.68240273, 0.7027511 , 0.70844864, 0.71240979])}
+09/27 23:19 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 23:19 - Best valid NDCG@5 at epoch 69
+
+09/27 23:19 - Batch 0 / 277, Total_loss: 0.03285 = Recloss: 0.00228 + Divloss: 0.20905
+09/27 23:33 - Batch 138 / 277, Total_loss: 0.03355 = Recloss: 0.00233 + Divloss: 0.21348
+09/27 23:46 - Batch 276 / 277, Total_loss: 0.03249 = Recloss: 0.00228 + Divloss: 0.20656
+09/27 23:47 - Avg Epoch 70 / 150, Total_Loss: 0.03317 = Recloss: 0.00244 + Divloss: 0.21007
+09/27 23:47 - Valid Recall@[1,5,10,20]: 0.69323, 0.73205, 0.73852, 0.74361
+09/27 23:47 - Valid NDCG@[1,5,10,20]: 0.69323, 0.71473, 0.71683, 0.71813
+09/27 23:47 - Valid ACC@[1,5,10,20]: 0.69323, 0.73205, 0.73852, 0.74361
+09/27 23:47 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0070.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/27 23:48 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.66140322, 0.68251126, 0.70036356, 0.70660372, 0.71099897]),
+ 'MRR': np.float64(0.6783031873264419),
+ 'NDCG': array([0.66140322, 0.67472091, 0.6830132 , 0.68504381, 0.6861547 ]),
+ 'Recall': array([0.66140322, 0.68251126, 0.70036356, 0.70660372, 0.71099897])}
+09/27 23:48 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/27 23:48 - Best valid NDCG@5 at epoch 70
+
+09/27 23:48 - Batch 0 / 277, Total_loss: 0.03382 = Recloss: 0.00269 + Divloss: 0.21286
+09/28 00:02 - Batch 138 / 277, Total_loss: 0.03346 = Recloss: 0.00241 + Divloss: 0.21230
+09/28 00:15 - Batch 276 / 277, Total_loss: 0.03246 = Recloss: 0.00231 + Divloss: 0.20614
+09/28 00:16 - Avg Epoch 71 / 150, Total_Loss: 0.03317 = Recloss: 0.00242 + Divloss: 0.21022
+09/28 00:16 - Valid Recall@[1,5,10,20]: 0.69574, 0.73607, 0.74187, 0.74606
+09/28 00:16 - Valid NDCG@[1,5,10,20]: 0.69574, 0.71820, 0.72010, 0.72116
+09/28 00:16 - Valid ACC@[1,5,10,20]: 0.69574, 0.73607, 0.74187, 0.74606
+09/28 00:16 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0071.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 00:17 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.66400781, 0.68685224, 0.70389061, 0.70931684, 0.71246405]),
+ 'MRR': np.float64(0.6812831761361265),
+ 'NDCG': array([0.66400781, 0.67842104, 0.68628678, 0.68804369, 0.68884886]),
+ 'Recall': array([0.66400781, 0.68685224, 0.70389061, 0.70931684, 0.71246405])}
+09/28 00:17 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 00:17 - Best valid NDCG@5 at epoch 71
+
+09/28 00:17 - Batch 0 / 277, Total_loss: 0.03229 = Recloss: 0.00216 + Divloss: 0.20598
+09/28 00:31 - Batch 138 / 277, Total_loss: 0.03162 = Recloss: 0.00237 + Divloss: 0.19999
+09/28 00:44 - Batch 276 / 277, Total_loss: 0.03157 = Recloss: 0.00211 + Divloss: 0.20142
+09/28 00:45 - Avg Epoch 72 / 150, Total_Loss: 0.03292 = Recloss: 0.00229 + Divloss: 0.20940
+09/28 00:45 - Valid Recall@[1,5,10,20]: 0.69636, 0.73528, 0.74042, 0.74500
+09/28 00:45 - Valid NDCG@[1,5,10,20]: 0.69636, 0.71806, 0.71976, 0.72093
+09/28 00:45 - Valid ACC@[1,5,10,20]: 0.69636, 0.73528, 0.74042, 0.74500
+09/28 00:45 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0072.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 00:45 - Best valid NDCG@5 at epoch 71
+
+09/28 00:45 - Batch 0 / 277, Total_loss: 0.03291 = Recloss: 0.00189 + Divloss: 0.21212
+09/28 00:58 - Batch 138 / 277, Total_loss: 0.03293 = Recloss: 0.00213 + Divloss: 0.21058
+09/28 01:12 - Batch 276 / 277, Total_loss: 0.03270 = Recloss: 0.00177 + Divloss: 0.21149
+09/28 01:13 - Avg Epoch 73 / 150, Total_Loss: 0.03292 = Recloss: 0.00228 + Divloss: 0.20947
+09/28 01:13 - Valid Recall@[1,5,10,20]: 0.69887, 0.73528, 0.74042, 0.74511
+09/28 01:13 - Valid NDCG@[1,5,10,20]: 0.69887, 0.71942, 0.72110, 0.72228
+09/28 01:13 - Valid ACC@[1,5,10,20]: 0.69887, 0.73528, 0.74042, 0.74511
+09/28 01:13 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0073.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 01:14 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.66764339, 0.68766618, 0.70264257, 0.70861143, 0.71154159]),
+ 'MRR': np.float64(0.6830986857821642),
+ 'NDCG': array([0.66764339, 0.68027636, 0.68728597, 0.68923945, 0.68997931]),
+ 'Recall': array([0.66764339, 0.68766618, 0.70264257, 0.70861143, 0.71154159])}
+09/28 01:14 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 01:14 - Best valid NDCG@5 at epoch 73
+
+09/28 01:14 - Batch 0 / 277, Total_loss: 0.03281 = Recloss: 0.00177 + Divloss: 0.21224
+09/28 01:27 - Batch 138 / 277, Total_loss: 0.03403 = Recloss: 0.00292 + Divloss: 0.21267
+09/28 01:40 - Batch 276 / 277, Total_loss: 0.03473 = Recloss: 0.00400 + Divloss: 0.21009
+09/28 01:41 - Avg Epoch 74 / 150, Total_Loss: 0.03295 = Recloss: 0.00223 + Divloss: 0.21002
+09/28 01:41 - Valid Recall@[1,5,10,20]: 0.69954, 0.73662, 0.74137, 0.74528
+09/28 01:41 - Valid NDCG@[1,5,10,20]: 0.69954, 0.72065, 0.72223, 0.72321
+09/28 01:41 - Valid ACC@[1,5,10,20]: 0.69954, 0.73662, 0.74137, 0.74528
+09/28 01:41 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0074.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 01:43 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.66764339, 0.68999946, 0.7036193 , 0.70882848, 0.71202995]),
+ 'MRR': np.float64(0.683752843795008),
+ 'NDCG': array([0.66764339, 0.6817485 , 0.68806893, 0.68979433, 0.6906239 ]),
+ 'Recall': array([0.66764339, 0.68999946, 0.7036193 , 0.70882848, 0.71202995])}
+09/28 01:43 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 01:43 - Best valid NDCG@5 at epoch 74
+
+09/28 01:43 - Batch 0 / 277, Total_loss: 0.03321 = Recloss: 0.00224 + Divloss: 0.21177
+09/28 01:56 - Batch 138 / 277, Total_loss: 0.03238 = Recloss: 0.00211 + Divloss: 0.20689
+09/28 02:09 - Batch 276 / 277, Total_loss: 0.03270 = Recloss: 0.00319 + Divloss: 0.20175
+09/28 02:10 - Avg Epoch 75 / 150, Total_Loss: 0.03280 = Recloss: 0.00219 + Divloss: 0.20924
+09/28 02:10 - Valid Recall@[1,5,10,20]: 0.70139, 0.73668, 0.74193, 0.74528
+09/28 02:10 - Valid NDCG@[1,5,10,20]: 0.70139, 0.72125, 0.72298, 0.72382
+09/28 02:10 - Valid ACC@[1,5,10,20]: 0.70139, 0.73668, 0.74193, 0.74528
+09/28 02:10 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0075.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 02:11 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.66932552, 0.69081339, 0.70372782, 0.70920831, 0.71154159]),
+ 'MRR': np.float64(0.6848705407087584),
+ 'NDCG': array([0.66932552, 0.68288286, 0.68897969, 0.6907776 , 0.69137652]),
+ 'Recall': array([0.66932552, 0.69081339, 0.70372782, 0.70920831, 0.71154159])}
+09/28 02:11 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 02:11 - Best valid NDCG@5 at epoch 75
+
+09/28 02:12 - Batch 0 / 277, Total_loss: 0.03202 = Recloss: 0.00217 + Divloss: 0.20410
+09/28 02:25 - Batch 138 / 277, Total_loss: 0.03204 = Recloss: 0.00208 + Divloss: 0.20485
+09/28 02:38 - Batch 276 / 277, Total_loss: 0.03205 = Recloss: 0.00150 + Divloss: 0.20885
+09/28 02:39 - Avg Epoch 76 / 150, Total_Loss: 0.03270 = Recloss: 0.00210 + Divloss: 0.20921
+09/28 02:39 - Valid Recall@[1,5,10,20]: 0.70289, 0.73729, 0.74227, 0.74606
+09/28 02:39 - Valid NDCG@[1,5,10,20]: 0.70289, 0.72234, 0.72394, 0.72490
+09/28 02:39 - Valid ACC@[1,5,10,20]: 0.70289, 0.73729, 0.74227, 0.74606
+09/28 02:39 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0076.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 02:40 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.67138749, 0.69141028, 0.7047588 , 0.70958815, 0.71202995]),
+ 'MRR': np.float64(0.6861583303217094),
+ 'NDCG': array([0.67138749, 0.68402046, 0.69025314, 0.69183864, 0.69245334]),
+ 'Recall': array([0.67138749, 0.69141028, 0.7047588 , 0.70958815, 0.71202995])}
+09/28 02:40 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 02:40 - Best valid NDCG@5 at epoch 76
+
+09/28 02:40 - Batch 0 / 277, Total_loss: 0.03307 = Recloss: 0.00225 + Divloss: 0.21068
+09/28 02:54 - Batch 138 / 277, Total_loss: 0.03109 = Recloss: 0.00158 + Divloss: 0.20177
+09/28 03:07 - Batch 276 / 277, Total_loss: 0.03196 = Recloss: 0.00207 + Divloss: 0.20435
+09/28 03:08 - Avg Epoch 77 / 150, Total_Loss: 0.03274 = Recloss: 0.00210 + Divloss: 0.20950
+09/28 03:08 - Valid Recall@[1,5,10,20]: 0.70490, 0.73869, 0.74344, 0.74701
+09/28 03:08 - Valid NDCG@[1,5,10,20]: 0.70490, 0.72400, 0.72556, 0.72647
+09/28 03:08 - Valid ACC@[1,5,10,20]: 0.70490, 0.73869, 0.74344, 0.74701
+09/28 03:08 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0077.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 03:09 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.67344945, 0.69336372, 0.70644094, 0.71029356, 0.71289815]),
+ 'MRR': np.float64(0.6878869453578512),
+ 'NDCG': array([0.67344945, 0.68601396, 0.69205733, 0.69332424, 0.69397663]),
+ 'Recall': array([0.67344945, 0.69336372, 0.70644094, 0.71029356, 0.71289815])}
+09/28 03:09 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 03:09 - Best valid NDCG@5 at epoch 77
+
+09/28 03:09 - Batch 0 / 277, Total_loss: 0.03192 = Recloss: 0.00171 + Divloss: 0.20651
+09/28 03:23 - Batch 138 / 277, Total_loss: 0.03281 = Recloss: 0.00221 + Divloss: 0.20917
+09/28 03:36 - Batch 276 / 277, Total_loss: 0.03199 = Recloss: 0.00168 + Divloss: 0.20719
+09/28 03:37 - Avg Epoch 78 / 150, Total_Loss: 0.03268 = Recloss: 0.00205 + Divloss: 0.20940
+09/28 03:37 - Valid Recall@[1,5,10,20]: 0.70742, 0.73841, 0.74299, 0.74662
+09/28 03:37 - Valid NDCG@[1,5,10,20]: 0.70742, 0.72496, 0.72647, 0.72740
+09/28 03:37 - Valid ACC@[1,5,10,20]: 0.70742, 0.73841, 0.74299, 0.74662
+09/28 03:37 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0078.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 03:38 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.67648814, 0.69423192, 0.70665798, 0.70985946, 0.71251831]),
+ 'MRR': np.float64(0.689620582834682),
+ 'NDCG': array([0.67648814, 0.68768322, 0.69346496, 0.69451564, 0.69519287]),
+ 'Recall': array([0.67648814, 0.69423192, 0.70665798, 0.70985946, 0.71251831])}
+09/28 03:38 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 03:38 - Best valid NDCG@5 at epoch 78
+
+09/28 03:38 - Batch 0 / 277, Total_loss: 0.03157 = Recloss: 0.00184 + Divloss: 0.20327
+09/28 03:51 - Batch 138 / 277, Total_loss: 0.03147 = Recloss: 0.00133 + Divloss: 0.20606
+09/28 04:05 - Batch 276 / 277, Total_loss: 0.03299 = Recloss: 0.00172 + Divloss: 0.21379
+09/28 04:06 - Avg Epoch 79 / 150, Total_Loss: 0.03259 = Recloss: 0.00205 + Divloss: 0.20878
+09/28 04:06 - Valid Recall@[1,5,10,20]: 0.70898, 0.74020, 0.74467, 0.74735
+09/28 04:06 - Valid NDCG@[1,5,10,20]: 0.70898, 0.72654, 0.72802, 0.72870
+09/28 04:06 - Valid ACC@[1,5,10,20]: 0.70898, 0.74020, 0.74467, 0.74735
+09/28 04:06 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0079.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 04:07 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.67681372, 0.69547995, 0.70763471, 0.71116176, 0.71344077]),
+ 'MRR': np.float64(0.690316040742671),
+ 'NDCG': array([0.67681372, 0.6885908 , 0.69422958, 0.69538033, 0.69595859]),
+ 'Recall': array([0.67681372, 0.69547995, 0.70763471, 0.71116176, 0.71344077])}
+09/28 04:07 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 04:07 - Best valid NDCG@5 at epoch 79
+
+09/28 04:07 - Batch 0 / 277, Total_loss: 0.03179 = Recloss: 0.00209 + Divloss: 0.20302
+09/28 04:20 - Batch 138 / 277, Total_loss: 0.03219 = Recloss: 0.00137 + Divloss: 0.21067
+09/28 04:34 - Batch 276 / 277, Total_loss: 0.03188 = Recloss: 0.00110 + Divloss: 0.21043
+09/28 04:35 - Avg Epoch 80 / 150, Total_Loss: 0.03256 = Recloss: 0.00198 + Divloss: 0.20907
+09/28 04:35 - Valid Recall@[1,5,10,20]: 0.71177, 0.73886, 0.74372, 0.74634
+09/28 04:35 - Valid NDCG@[1,5,10,20]: 0.71177, 0.72701, 0.72860, 0.72927
+09/28 04:35 - Valid ACC@[1,5,10,20]: 0.71177, 0.73886, 0.74372, 0.74634
+09/28 04:35 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0080.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 04:36 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.67903847, 0.69629388, 0.70687503, 0.71034782, 0.71278963]),
+ 'MRR': np.float64(0.6913749006227036),
+ 'NDCG': array([0.67903847, 0.68992543, 0.69482137, 0.69596319, 0.69658176]),
+ 'Recall': array([0.67903847, 0.69629388, 0.70687503, 0.71034782, 0.71278963])}
+09/28 04:36 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 04:36 - Best valid NDCG@5 at epoch 80
+
+09/28 04:36 - Batch 0 / 277, Total_loss: 0.03088 = Recloss: 0.00168 + Divloss: 0.19968
+09/28 04:49 - Batch 138 / 277, Total_loss: 0.03247 = Recloss: 0.00185 + Divloss: 0.20934
+09/28 05:02 - Batch 276 / 277, Total_loss: 0.03219 = Recloss: 0.00174 + Divloss: 0.20818
+09/28 05:03 - Avg Epoch 81 / 150, Total_Loss: 0.03340 = Recloss: 0.00187 + Divloss: 0.21554
+09/28 05:03 - Valid Recall@[1,5,10,20]: 0.71311, 0.73925, 0.74383, 0.74645
+09/28 05:03 - Valid NDCG@[1,5,10,20]: 0.71311, 0.72773, 0.72925, 0.72992
+09/28 05:03 - Valid ACC@[1,5,10,20]: 0.71311, 0.73925, 0.74383, 0.74645
+09/28 05:03 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0081.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 05:05 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.68017798, 0.69618536, 0.70682077, 0.71072766, 0.71278963]),
+ 'MRR': np.float64(0.6919474030975643),
+ 'NDCG': array([0.68017798, 0.69027751, 0.69519938, 0.6964873 , 0.69701248]),
+ 'Recall': array([0.68017798, 0.69618536, 0.70682077, 0.71072766, 0.71278963])}
+09/28 05:05 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 05:05 - Best valid NDCG@5 at epoch 81
+
+09/28 05:05 - Batch 0 / 277, Total_loss: 0.03271 = Recloss: 0.00225 + Divloss: 0.20829
+09/28 05:18 - Batch 138 / 277, Total_loss: 0.03347 = Recloss: 0.00191 + Divloss: 0.21577
+09/28 05:31 - Batch 276 / 277, Total_loss: 0.03342 = Recloss: 0.00304 + Divloss: 0.20769
+09/28 05:32 - Avg Epoch 82 / 150, Total_Loss: 0.03236 = Recloss: 0.00189 + Divloss: 0.20832
+09/28 05:32 - Valid Recall@[1,5,10,20]: 0.71412, 0.73931, 0.74405, 0.74673
+09/28 05:32 - Valid NDCG@[1,5,10,20]: 0.71412, 0.72829, 0.72986, 0.73054
+09/28 05:32 - Valid ACC@[1,5,10,20]: 0.71412, 0.73931, 0.74405, 0.74673
+09/28 05:32 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0082.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 05:33 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.68104618, 0.69716208, 0.7069293 , 0.71105323, 0.71327799]),
+ 'MRR': np.float64(0.6926950999147319),
+ 'NDCG': array([0.68104618, 0.69121418, 0.69577286, 0.69711794, 0.69768899]),
+ 'Recall': array([0.68104618, 0.69716208, 0.7069293 , 0.71105323, 0.71327799])}
+09/28 05:33 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 05:33 - Best valid NDCG@5 at epoch 82
+
+09/28 05:34 - Batch 0 / 277, Total_loss: 0.03264 = Recloss: 0.00181 + Divloss: 0.21077
+09/28 05:47 - Batch 138 / 277, Total_loss: 0.03117 = Recloss: 0.00143 + Divloss: 0.20331
+09/28 06:00 - Batch 276 / 277, Total_loss: 0.03130 = Recloss: 0.00150 + Divloss: 0.20375
+09/28 06:01 - Avg Epoch 83 / 150, Total_Loss: 0.03241 = Recloss: 0.00184 + Divloss: 0.20896
+09/28 06:01 - Valid Recall@[1,5,10,20]: 0.71434, 0.74014, 0.74411, 0.74679
+09/28 06:01 - Valid NDCG@[1,5,10,20]: 0.71434, 0.72886, 0.73014, 0.73082
+09/28 06:01 - Valid ACC@[1,5,10,20]: 0.71434, 0.74014, 0.74411, 0.74679
+09/28 06:01 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0083.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 06:02 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.68099191, 0.69748766, 0.70741766, 0.71099897, 0.7126811 ]),
+ 'MRR': np.float64(0.6927300281682354),
+ 'NDCG': array([0.68099191, 0.69139957, 0.69600635, 0.6971737 , 0.69760178]),
+ 'Recall': array([0.68099191, 0.69748766, 0.70741766, 0.71099897, 0.7126811 ])}
+09/28 06:02 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 06:02 - Best valid NDCG@5 at epoch 83
+
+09/28 06:03 - Batch 0 / 277, Total_loss: 0.03200 = Recloss: 0.00184 + Divloss: 0.20620
+09/28 06:16 - Batch 138 / 277, Total_loss: 0.03176 = Recloss: 0.00169 + Divloss: 0.20563
+09/28 06:29 - Batch 276 / 277, Total_loss: 0.03240 = Recloss: 0.00163 + Divloss: 0.21041
+09/28 06:30 - Avg Epoch 84 / 150, Total_Loss: 0.03232 = Recloss: 0.00183 + Divloss: 0.20849
+09/28 06:30 - Valid Recall@[1,5,10,20]: 0.71540, 0.73981, 0.74394, 0.74673
+09/28 06:30 - Valid NDCG@[1,5,10,20]: 0.71540, 0.72919, 0.73056, 0.73127
+09/28 06:30 - Valid ACC@[1,5,10,20]: 0.71540, 0.73981, 0.74394, 0.74673
+09/28 06:30 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0084.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 06:31 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.682457  , 0.69889848, 0.70720061, 0.71045635, 0.71278963]),
+ 'MRR': np.float64(0.6936985391018196),
+ 'NDCG': array([0.682457  , 0.69283041, 0.69666624, 0.69773568, 0.69834502]),
+ 'Recall': array([0.682457  , 0.69889848, 0.70720061, 0.71045635, 0.71278963])}
+09/28 06:31 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 06:31 - Best valid NDCG@5 at epoch 84
+
+09/28 06:31 - Batch 0 / 277, Total_loss: 0.03209 = Recloss: 0.00187 + Divloss: 0.20663
+09/28 06:45 - Batch 138 / 277, Total_loss: 0.03159 = Recloss: 0.00140 + Divloss: 0.20642
+09/28 06:58 - Batch 276 / 277, Total_loss: 0.03178 = Recloss: 0.00155 + Divloss: 0.20663
+09/28 06:59 - Avg Epoch 85 / 150, Total_Loss: 0.03228 = Recloss: 0.00179 + Divloss: 0.20846
+09/28 06:59 - Valid Recall@[1,5,10,20]: 0.71702, 0.74120, 0.74500, 0.74712
+09/28 06:59 - Valid NDCG@[1,5,10,20]: 0.71702, 0.73075, 0.73200, 0.73253
+09/28 06:59 - Valid ACC@[1,5,10,20]: 0.71702, 0.74120, 0.74500, 0.74712
+09/28 06:59 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0085.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 07:00 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.68332519, 0.69965815, 0.70828585, 0.71159585, 0.71316946]),
+ 'MRR': np.float64(0.6946062802688557),
+ 'NDCG': array([0.68332519, 0.69363014, 0.69766676, 0.69875107, 0.69915284]),
+ 'Recall': array([0.68332519, 0.69965815, 0.70828585, 0.71159585, 0.71316946])}
+09/28 07:00 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 07:00 - Best valid NDCG@5 at epoch 85
+
+09/28 07:00 - Batch 0 / 277, Total_loss: 0.03209 = Recloss: 0.00149 + Divloss: 0.20921
+09/28 07:14 - Batch 138 / 277, Total_loss: 0.03130 = Recloss: 0.00178 + Divloss: 0.20185
+09/28 07:27 - Batch 276 / 277, Total_loss: 0.03250 = Recloss: 0.00143 + Divloss: 0.21245
+09/28 07:28 - Avg Epoch 86 / 150, Total_Loss: 0.03236 = Recloss: 0.00179 + Divloss: 0.20899
+09/28 07:28 - Valid Recall@[1,5,10,20]: 0.71875, 0.74171, 0.74523, 0.74729
+09/28 07:28 - Valid NDCG@[1,5,10,20]: 0.71875, 0.73177, 0.73291, 0.73343
+09/28 07:28 - Valid ACC@[1,5,10,20]: 0.71875, 0.74171, 0.74523, 0.74729
+09/28 07:28 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0086.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 07:29 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.68538716, 0.70025503, 0.70915405, 0.71170438, 0.71333225]),
+ 'MRR': np.float64(0.6958626981742493),
+ 'NDCG': array([0.68538716, 0.69476774, 0.69888437, 0.69972244, 0.70013895]),
+ 'Recall': array([0.68538716, 0.70025503, 0.70915405, 0.71170438, 0.71333225])}
+09/28 07:29 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 07:29 - Best valid NDCG@5 at epoch 86
+
+09/28 07:29 - Batch 0 / 277, Total_loss: 0.03165 = Recloss: 0.00175 + Divloss: 0.20441
+09/28 07:43 - Batch 138 / 277, Total_loss: 0.03122 = Recloss: 0.00124 + Divloss: 0.20498
+09/28 07:56 - Batch 276 / 277, Total_loss: 0.03113 = Recloss: 0.00190 + Divloss: 0.19984
+09/28 07:57 - Avg Epoch 87 / 150, Total_Loss: 0.03221 = Recloss: 0.00174 + Divloss: 0.20832
+09/28 07:57 - Valid Recall@[1,5,10,20]: 0.71959, 0.74187, 0.74556, 0.74729
+09/28 07:57 - Valid NDCG@[1,5,10,20]: 0.71959, 0.73221, 0.73344, 0.73388
+09/28 07:57 - Valid ACC@[1,5,10,20]: 0.71959, 0.74187, 0.74556, 0.74729
+09/28 07:57 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0087.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 07:58 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.68652667, 0.70052634, 0.70882848, 0.71175864, 0.71327799]),
+ 'MRR': np.float64(0.6964442732440902),
+ 'NDCG': array([0.68652667, 0.69535948, 0.69920183, 0.70017125, 0.70055468]),
+ 'Recall': array([0.68652667, 0.70052634, 0.70882848, 0.71175864, 0.71327799])}
+09/28 07:58 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 07:58 - Best valid NDCG@5 at epoch 87
+
+09/28 07:58 - Batch 0 / 277, Total_loss: 0.03137 = Recloss: 0.00166 + Divloss: 0.20309
+09/28 08:11 - Batch 138 / 277, Total_loss: 0.03168 = Recloss: 0.00160 + Divloss: 0.20562
+09/28 08:25 - Batch 276 / 277, Total_loss: 0.03133 = Recloss: 0.00209 + Divloss: 0.19991
+09/28 08:26 - Avg Epoch 88 / 150, Total_Loss: 0.03224 = Recloss: 0.00173 + Divloss: 0.20856
+09/28 08:26 - Valid Recall@[1,5,10,20]: 0.71870, 0.74154, 0.74489, 0.74724
+09/28 08:26 - Valid NDCG@[1,5,10,20]: 0.71870, 0.73162, 0.73272, 0.73331
+09/28 08:26 - Valid ACC@[1,5,10,20]: 0.71870, 0.74154, 0.74489, 0.74724
+09/28 08:26 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0088.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 08:26 - Best valid NDCG@5 at epoch 87
+
+09/28 08:26 - Batch 0 / 277, Total_loss: 0.03236 = Recloss: 0.00216 + Divloss: 0.20648
+09/28 08:39 - Batch 138 / 277, Total_loss: 0.03110 = Recloss: 0.00123 + Divloss: 0.20420
+09/28 08:52 - Batch 276 / 277, Total_loss: 0.03148 = Recloss: 0.00119 + Divloss: 0.20714
+09/28 08:54 - Avg Epoch 89 / 150, Total_Loss: 0.03218 = Recloss: 0.00172 + Divloss: 0.20821
+09/28 08:54 - Valid Recall@[1,5,10,20]: 0.72121, 0.74260, 0.74545, 0.74712
+09/28 08:54 - Valid NDCG@[1,5,10,20]: 0.72121, 0.73334, 0.73427, 0.73469
+09/28 08:54 - Valid ACC@[1,5,10,20]: 0.72121, 0.74260, 0.74545, 0.74712
+09/28 08:54 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0089.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 08:55 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.68918552, 0.70209995, 0.7093711 , 0.71148733, 0.71322372]),
+ 'MRR': np.float64(0.6981522001611261),
+ 'NDCG': array([0.68918552, 0.69733362, 0.70068366, 0.70139247, 0.70182932]),
+ 'Recall': array([0.68918552, 0.70209995, 0.7093711 , 0.71148733, 0.71322372])}
+09/28 08:55 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 08:55 - Best valid NDCG@5 at epoch 89
+
+09/28 08:55 - Batch 0 / 277, Total_loss: 0.03248 = Recloss: 0.00186 + Divloss: 0.20936
+09/28 09:08 - Batch 138 / 277, Total_loss: 0.03240 = Recloss: 0.00156 + Divloss: 0.21088
+09/28 09:21 - Batch 276 / 277, Total_loss: 0.03147 = Recloss: 0.00125 + Divloss: 0.20656
+09/28 09:22 - Avg Epoch 90 / 150, Total_Loss: 0.03215 = Recloss: 0.00166 + Divloss: 0.20848
+09/28 09:22 - Valid Recall@[1,5,10,20]: 0.72183, 0.74165, 0.74495, 0.74696
+09/28 09:22 - Valid NDCG@[1,5,10,20]: 0.72183, 0.73311, 0.73419, 0.73469
+09/28 09:22 - Valid ACC@[1,5,10,20]: 0.72183, 0.74165, 0.74495, 0.74696
+09/28 09:22 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0090.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 09:22 - Best valid NDCG@5 at epoch 89
+
+09/28 09:22 - Batch 0 / 277, Total_loss: 0.03242 = Recloss: 0.00132 + Divloss: 0.21260
+09/28 09:36 - Batch 138 / 277, Total_loss: 0.03157 = Recloss: 0.00153 + Divloss: 0.20539
+09/28 09:49 - Batch 276 / 277, Total_loss: 0.03116 = Recloss: 0.00115 + Divloss: 0.20519
+09/28 09:50 - Avg Epoch 91 / 150, Total_Loss: 0.03226 = Recloss: 0.00168 + Divloss: 0.20912
+09/28 09:50 - Valid Recall@[1,5,10,20]: 0.72261, 0.74260, 0.74511, 0.74696
+09/28 09:50 - Valid NDCG@[1,5,10,20]: 0.72261, 0.73402, 0.73484, 0.73531
+09/28 09:50 - Valid ACC@[1,5,10,20]: 0.72261, 0.74260, 0.74511, 0.74696
+09/28 09:50 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0091.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 09:51 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.68940257, 0.70134028, 0.70882848, 0.71137881, 0.71349503]),
+ 'MRR': np.float64(0.6981359017418787),
+ 'NDCG': array([0.68940257, 0.69693443, 0.70048625, 0.70131786, 0.70185669]),
+ 'Recall': array([0.68940257, 0.70134028, 0.70882848, 0.71137881, 0.71349503])}
+09/28 09:51 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 09:51 - Best valid NDCG@5 at epoch 91
+
+09/28 09:51 - Batch 0 / 277, Total_loss: 0.03184 = Recloss: 0.00163 + Divloss: 0.20655
+09/28 10:05 - Batch 138 / 277, Total_loss: 0.03148 = Recloss: 0.00134 + Divloss: 0.20610
+09/28 10:18 - Batch 276 / 277, Total_loss: 0.03075 = Recloss: 0.00110 + Divloss: 0.20268
+09/28 10:19 - Avg Epoch 92 / 150, Total_Loss: 0.03221 = Recloss: 0.00162 + Divloss: 0.20912
+09/28 10:19 - Valid Recall@[1,5,10,20]: 0.72462, 0.74383, 0.74578, 0.74707
+09/28 10:19 - Valid NDCG@[1,5,10,20]: 0.72462, 0.73553, 0.73617, 0.73649
+09/28 10:19 - Valid ACC@[1,5,10,20]: 0.72462, 0.74383, 0.74578, 0.74707
+09/28 10:19 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0092.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 10:20 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.69065061, 0.70356503, 0.70958815, 0.7118129 , 0.71382061]),
+ 'MRR': np.float64(0.6993274562373462),
+ 'NDCG': array([0.69065061, 0.6987987 , 0.70160748, 0.70234658, 0.70285037]),
+ 'Recall': array([0.69065061, 0.70356503, 0.70958815, 0.7118129 , 0.71382061])}
+09/28 10:20 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 10:20 - Best valid NDCG@5 at epoch 92
+
+09/28 10:20 - Batch 0 / 277, Total_loss: 0.03214 = Recloss: 0.00158 + Divloss: 0.20895
+09/28 10:34 - Batch 138 / 277, Total_loss: 0.03066 = Recloss: 0.00097 + Divloss: 0.20296
+09/28 10:47 - Batch 276 / 277, Total_loss: 0.03150 = Recloss: 0.00168 + Divloss: 0.20386
+09/28 10:48 - Avg Epoch 93 / 150, Total_Loss: 0.03203 = Recloss: 0.00160 + Divloss: 0.20806
+09/28 10:48 - Valid Recall@[1,5,10,20]: 0.72378, 0.74243, 0.74511, 0.74696
+09/28 10:48 - Valid NDCG@[1,5,10,20]: 0.72378, 0.73433, 0.73522, 0.73569
+09/28 10:48 - Valid ACC@[1,5,10,20]: 0.72378, 0.74243, 0.74511, 0.74696
+09/28 10:48 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0093.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 10:48 - Best valid NDCG@5 at epoch 92
+
+09/28 10:48 - Batch 0 / 277, Total_loss: 0.03155 = Recloss: 0.00109 + Divloss: 0.20826
+09/28 11:01 - Batch 138 / 277, Total_loss: 0.03168 = Recloss: 0.00129 + Divloss: 0.20780
+09/28 11:15 - Batch 276 / 277, Total_loss: 0.03166 = Recloss: 0.00127 + Divloss: 0.20778
+09/28 11:16 - Avg Epoch 94 / 150, Total_Loss: 0.03210 = Recloss: 0.00161 + Divloss: 0.20846
+09/28 11:16 - Valid Recall@[1,5,10,20]: 0.72473, 0.74232, 0.74500, 0.74718
+09/28 11:16 - Valid NDCG@[1,5,10,20]: 0.72473, 0.73469, 0.73558, 0.73612
+09/28 11:16 - Valid ACC@[1,5,10,20]: 0.72473, 0.74232, 0.74500, 0.74718
+09/28 11:16 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0094.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 11:16 - Best valid NDCG@5 at epoch 92
+
+09/28 11:16 - Batch 0 / 277, Total_loss: 0.03193 = Recloss: 0.00203 + Divloss: 0.20439
+09/28 11:29 - Batch 138 / 277, Total_loss: 0.03286 = Recloss: 0.00163 + Divloss: 0.21353
+09/28 11:43 - Batch 276 / 277, Total_loss: 0.03143 = Recloss: 0.00188 + Divloss: 0.20203
+09/28 11:44 - Avg Epoch 95 / 150, Total_Loss: 0.03208 = Recloss: 0.00159 + Divloss: 0.20848
+09/28 11:44 - Valid Recall@[1,5,10,20]: 0.72445, 0.74349, 0.74550, 0.74701
+09/28 11:44 - Valid NDCG@[1,5,10,20]: 0.72445, 0.73534, 0.73600, 0.73638
+09/28 11:44 - Valid ACC@[1,5,10,20]: 0.72445, 0.74349, 0.74550, 0.74701
+09/28 11:44 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0095.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 11:44 - Best valid NDCG@5 at epoch 92
+
+09/28 11:44 - Batch 0 / 277, Total_loss: 0.03303 = Recloss: 0.00283 + Divloss: 0.20654
+09/28 11:57 - Batch 138 / 277, Total_loss: 0.03252 = Recloss: 0.00141 + Divloss: 0.21268
+09/28 12:11 - Batch 276 / 277, Total_loss: 0.03285 = Recloss: 0.00214 + Divloss: 0.20993
+09/28 12:12 - Avg Epoch 96 / 150, Total_Loss: 0.03209 = Recloss: 0.00159 + Divloss: 0.20849
+09/28 12:12 - Valid Recall@[1,5,10,20]: 0.72518, 0.74377, 0.74578, 0.74740
+09/28 12:12 - Valid NDCG@[1,5,10,20]: 0.72518, 0.73594, 0.73660, 0.73701
+09/28 12:12 - Valid ACC@[1,5,10,20]: 0.72518, 0.74377, 0.74578, 0.74740
+09/28 12:12 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0096.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 12:13 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.6928211 , 0.7047588 , 0.7102393 , 0.7118129 , 0.71365782]),
+ 'MRR': np.float64(0.700761144908956),
+ 'NDCG': array([0.6928211 , 0.70035295, 0.70293201, 0.7034348 , 0.70390611]),
+ 'Recall': array([0.6928211 , 0.7047588 , 0.7102393 , 0.7118129 , 0.71365782])}
+09/28 12:13 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 12:13 - Best valid NDCG@5 at epoch 96
+
+09/28 12:13 - Batch 0 / 277, Total_loss: 0.03115 = Recloss: 0.00138 + Divloss: 0.20354
+09/28 12:27 - Batch 138 / 277, Total_loss: 0.03136 = Recloss: 0.00138 + Divloss: 0.20495
+09/28 12:40 - Batch 276 / 277, Total_loss: 0.03136 = Recloss: 0.00151 + Divloss: 0.20405
+09/28 12:41 - Avg Epoch 97 / 150, Total_Loss: 0.03203 = Recloss: 0.00160 + Divloss: 0.20801
+09/28 12:41 - Valid Recall@[1,5,10,20]: 0.72585, 0.74355, 0.74590, 0.74707
+09/28 12:41 - Valid NDCG@[1,5,10,20]: 0.72585, 0.73611, 0.73686, 0.73715
+09/28 12:41 - Valid ACC@[1,5,10,20]: 0.72585, 0.74355, 0.74590, 0.74707
+09/28 12:41 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0097.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 12:42 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.69347224, 0.70432471, 0.71018503, 0.71186717, 0.71392913]),
+ 'MRR': np.float64(0.7009679529997407),
+ 'NDCG': array([0.69347224, 0.70031939, 0.70303847, 0.7035766 , 0.70410494]),
+ 'Recall': array([0.69347224, 0.70432471, 0.71018503, 0.71186717, 0.71392913])}
+09/28 12:42 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 12:42 - Best valid NDCG@5 at epoch 97
+
+09/28 12:42 - Batch 0 / 277, Total_loss: 0.03079 = Recloss: 0.00109 + Divloss: 0.20303
+09/28 12:56 - Batch 138 / 277, Total_loss: 0.03206 = Recloss: 0.00091 + Divloss: 0.21294
+09/28 13:10 - Batch 276 / 277, Total_loss: 0.03274 = Recloss: 0.00141 + Divloss: 0.21417
+09/28 13:11 - Avg Epoch 98 / 150, Total_Loss: 0.03190 = Recloss: 0.00147 + Divloss: 0.20803
+09/28 13:11 - Valid Recall@[1,5,10,20]: 0.72696, 0.74383, 0.74590, 0.74718
+09/28 13:11 - Valid NDCG@[1,5,10,20]: 0.72696, 0.73668, 0.73736, 0.73768
+09/28 13:11 - Valid ACC@[1,5,10,20]: 0.72696, 0.74383, 0.74590, 0.74718
+09/28 13:11 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0098.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 13:12 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.6943947 , 0.70497585, 0.70996799, 0.7118129 , 0.71344077]),
+ 'MRR': np.float64(0.7015433032263843),
+ 'NDCG': array([0.6943947 , 0.70107067, 0.7034202 , 0.70402335, 0.70443869]),
+ 'Recall': array([0.6943947 , 0.70497585, 0.70996799, 0.7118129 , 0.71344077])}
+09/28 13:12 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 13:12 - Best valid NDCG@5 at epoch 98
+
+09/28 13:12 - Batch 0 / 277, Total_loss: 0.03139 = Recloss: 0.00117 + Divloss: 0.20665
+09/28 13:25 - Batch 138 / 277, Total_loss: 0.03074 = Recloss: 0.00105 + Divloss: 0.20303
+09/28 13:39 - Batch 276 / 277, Total_loss: 0.03308 = Recloss: 0.00177 + Divloss: 0.21408
+09/28 13:40 - Avg Epoch 99 / 150, Total_Loss: 0.03194 = Recloss: 0.00152 + Divloss: 0.20796
+09/28 13:40 - Valid Recall@[1,5,10,20]: 0.72825, 0.74349, 0.74550, 0.74729
+09/28 13:40 - Valid NDCG@[1,5,10,20]: 0.72825, 0.73702, 0.73769, 0.73814
+09/28 13:40 - Valid ACC@[1,5,10,20]: 0.72825, 0.74349, 0.74550, 0.74729
+09/28 13:40 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0099.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 13:41 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.69499159, 0.70503012, 0.7098052 , 0.7118129 , 0.71376635]),
+ 'MRR': np.float64(0.7018194182301672),
+ 'NDCG': array([0.69499159, 0.70132519, 0.70355907, 0.70420412, 0.70469815]),
+ 'Recall': array([0.69499159, 0.70503012, 0.7098052 , 0.7118129 , 0.71376635])}
+09/28 13:41 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 13:41 - Best valid NDCG@5 at epoch 99
+
+09/28 13:41 - Batch 0 / 277, Total_loss: 0.03209 = Recloss: 0.00224 + Divloss: 0.20404
+09/28 13:55 - Batch 138 / 277, Total_loss: 0.03050 = Recloss: 0.00138 + Divloss: 0.19906
+09/28 14:08 - Batch 276 / 277, Total_loss: 0.03082 = Recloss: 0.00139 + Divloss: 0.20118
+09/28 14:09 - Avg Epoch 100 / 150, Total_Loss: 0.03191 = Recloss: 0.00150 + Divloss: 0.20791
+09/28 14:09 - Valid Recall@[1,5,10,20]: 0.72825, 0.74355, 0.74511, 0.74768
+09/28 14:09 - Valid NDCG@[1,5,10,20]: 0.72825, 0.73708, 0.73759, 0.73822
+09/28 14:09 - Valid ACC@[1,5,10,20]: 0.72825, 0.74355, 0.74511, 0.74768
+09/28 14:09 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0100.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 14:10 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.69477454, 0.70497585, 0.7098052 , 0.71159585, 0.71360356]),
+ 'MRR': np.float64(0.7016564190817448),
+ 'NDCG': array([0.69477454, 0.70121085, 0.70345444, 0.704029  , 0.70453837]),
+ 'Recall': array([0.69477454, 0.70497585, 0.7098052 , 0.71159585, 0.71360356])}
+09/28 14:10 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 14:10 - Best valid NDCG@5 at epoch 100
+
+09/28 14:10 - Batch 0 / 277, Total_loss: 0.03191 = Recloss: 0.00183 + Divloss: 0.20566
+09/28 14:24 - Batch 138 / 277, Total_loss: 0.03064 = Recloss: 0.00077 + Divloss: 0.20423
+09/28 14:37 - Batch 276 / 277, Total_loss: 0.03236 = Recloss: 0.00143 + Divloss: 0.21143
+09/28 14:38 - Avg Epoch 101 / 150, Total_Loss: 0.03194 = Recloss: 0.00148 + Divloss: 0.20821
+09/28 14:38 - Valid Recall@[1,5,10,20]: 0.72976, 0.74411, 0.74545, 0.74768
+09/28 14:38 - Valid NDCG@[1,5,10,20]: 0.72976, 0.73817, 0.73862, 0.73918
+09/28 14:38 - Valid ACC@[1,5,10,20]: 0.72976, 0.74411, 0.74545, 0.74768
+09/28 14:38 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0101.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 14:39 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.6965652 , 0.70584405, 0.71056487, 0.71208422, 0.71382061]),
+ 'MRR': np.float64(0.7029128746472658),
+ 'NDCG': array([0.6965652 , 0.7024195 , 0.70461734, 0.70510898, 0.70555403]),
+ 'Recall': array([0.6965652 , 0.70584405, 0.71056487, 0.71208422, 0.71382061])}
+09/28 14:39 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 14:39 - Best valid NDCG@5 at epoch 101
+
+09/28 14:40 - Batch 0 / 277, Total_loss: 0.03292 = Recloss: 0.00158 + Divloss: 0.21425
+09/28 14:53 - Batch 138 / 277, Total_loss: 0.03168 = Recloss: 0.00107 + Divloss: 0.20931
+09/28 15:06 - Batch 276 / 277, Total_loss: 0.03212 = Recloss: 0.00158 + Divloss: 0.20883
+09/28 15:08 - Avg Epoch 102 / 150, Total_Loss: 0.03199 = Recloss: 0.00149 + Divloss: 0.20851
+09/28 15:08 - Valid Recall@[1,5,10,20]: 0.72970, 0.74416, 0.74578, 0.74763
+09/28 15:08 - Valid NDCG@[1,5,10,20]: 0.72970, 0.73801, 0.73854, 0.73899
+09/28 15:08 - Valid ACC@[1,5,10,20]: 0.72970, 0.74416, 0.74578, 0.74763
+09/28 15:08 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0102.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 15:08 - Best valid NDCG@5 at epoch 101
+
+09/28 15:08 - Batch 0 / 277, Total_loss: 0.03163 = Recloss: 0.00158 + Divloss: 0.20545
+09/28 15:21 - Batch 138 / 277, Total_loss: 0.03171 = Recloss: 0.00136 + Divloss: 0.20753
+09/28 15:35 - Batch 276 / 277, Total_loss: 0.03142 = Recloss: 0.00257 + Divloss: 0.19727
+09/28 15:36 - Avg Epoch 103 / 150, Total_Loss: 0.03182 = Recloss: 0.00144 + Divloss: 0.20769
+09/28 15:36 - Valid Recall@[1,5,10,20]: 0.73009, 0.74439, 0.74573, 0.74757
+09/28 15:36 - Valid NDCG@[1,5,10,20]: 0.73009, 0.73841, 0.73885, 0.73930
+09/28 15:36 - Valid ACC@[1,5,10,20]: 0.73009, 0.74439, 0.74573, 0.74757
+09/28 15:36 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0103.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 15:37 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.69797602, 0.70622389, 0.71061913, 0.71197569, 0.71387487]),
+ 'MRR': np.float64(0.703717439390699),
+ 'NDCG': array([0.69797602, 0.70317984, 0.7052446 , 0.70568433, 0.70616068]),
+ 'Recall': array([0.69797602, 0.70622389, 0.71061913, 0.71197569, 0.71387487])}
+09/28 15:37 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 15:37 - Best valid NDCG@5 at epoch 103
+
+09/28 15:37 - Batch 0 / 277, Total_loss: 0.03160 = Recloss: 0.00147 + Divloss: 0.20598
+09/28 15:50 - Batch 138 / 277, Total_loss: 0.03232 = Recloss: 0.00153 + Divloss: 0.21051
+09/28 16:04 - Batch 276 / 277, Total_loss: 0.03190 = Recloss: 0.00136 + Divloss: 0.20879
+09/28 16:05 - Avg Epoch 104 / 150, Total_Loss: 0.03195 = Recloss: 0.00145 + Divloss: 0.20854
+09/28 16:05 - Valid Recall@[1,5,10,20]: 0.73126, 0.74405, 0.74590, 0.74757
+09/28 16:05 - Valid NDCG@[1,5,10,20]: 0.73126, 0.73873, 0.73934, 0.73976
+09/28 16:05 - Valid ACC@[1,5,10,20]: 0.73126, 0.74405, 0.74590, 0.74757
+09/28 16:05 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0104.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 16:06 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.69846438, 0.7060611 , 0.71018503, 0.71159585, 0.71376635]),
+ 'MRR': np.float64(0.7038307680913877),
+ 'NDCG': array([0.69846438, 0.70325738, 0.70518924, 0.70564938, 0.70620485]),
+ 'Recall': array([0.69846438, 0.7060611 , 0.71018503, 0.71159585, 0.71376635])}
+09/28 16:06 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 16:06 - Best valid NDCG@5 at epoch 104
+
+09/28 16:06 - Batch 0 / 277, Total_loss: 0.03124 = Recloss: 0.00144 + Divloss: 0.20378
+09/28 16:20 - Batch 138 / 277, Total_loss: 0.03126 = Recloss: 0.00132 + Divloss: 0.20469
+09/28 16:33 - Batch 276 / 277, Total_loss: 0.03260 = Recloss: 0.00204 + Divloss: 0.20894
+09/28 16:34 - Avg Epoch 105 / 150, Total_Loss: 0.03186 = Recloss: 0.00143 + Divloss: 0.20804
+09/28 16:34 - Valid Recall@[1,5,10,20]: 0.73065, 0.74400, 0.74601, 0.74768
+09/28 16:34 - Valid NDCG@[1,5,10,20]: 0.73065, 0.73842, 0.73908, 0.73949
+09/28 16:34 - Valid ACC@[1,5,10,20]: 0.73065, 0.74400, 0.74601, 0.74768
+09/28 16:34 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0105.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 16:34 - Best valid NDCG@5 at epoch 104
+
+09/28 16:34 - Batch 0 / 277, Total_loss: 0.03109 = Recloss: 0.00089 + Divloss: 0.20648
+09/28 16:48 - Batch 138 / 277, Total_loss: 0.03075 = Recloss: 0.00196 + Divloss: 0.19685
+09/28 17:01 - Batch 276 / 277, Total_loss: 0.03224 = Recloss: 0.00227 + Divloss: 0.20487
+09/28 17:02 - Avg Epoch 106 / 150, Total_Loss: 0.03131 = Recloss: 0.00143 + Divloss: 0.20425
+09/28 17:02 - Valid Recall@[1,5,10,20]: 0.73227, 0.74439, 0.74617, 0.74768
+09/28 17:02 - Valid NDCG@[1,5,10,20]: 0.73227, 0.73936, 0.73994, 0.74031
+09/28 17:02 - Valid ACC@[1,5,10,20]: 0.73227, 0.74439, 0.74617, 0.74768
+09/28 17:02 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0106.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 17:04 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.69846438, 0.70638667, 0.71013077, 0.71208422, 0.71387487]),
+ 'MRR': np.float64(0.703932907339016),
+ 'NDCG': array([0.69846438, 0.70346279, 0.70522791, 0.7058601 , 0.70631475]),
+ 'Recall': array([0.69846438, 0.70638667, 0.71013077, 0.71208422, 0.71387487])}
+09/28 17:04 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 17:04 - Best valid NDCG@5 at epoch 106
+
+09/28 17:04 - Batch 0 / 277, Total_loss: 0.03055 = Recloss: 0.00158 + Divloss: 0.19805
+09/28 17:17 - Batch 138 / 277, Total_loss: 0.03155 = Recloss: 0.00193 + Divloss: 0.20248
+09/28 17:30 - Batch 276 / 277, Total_loss: 0.03077 = Recloss: 0.00164 + Divloss: 0.19920
+09/28 17:32 - Avg Epoch 107 / 150, Total_Loss: 0.03101 = Recloss: 0.00147 + Divloss: 0.20195
+09/28 17:32 - Valid Recall@[1,5,10,20]: 0.73171, 0.74405, 0.74550, 0.74740
+09/28 17:32 - Valid NDCG@[1,5,10,20]: 0.73171, 0.73893, 0.73942, 0.73991
+09/28 17:32 - Valid ACC@[1,5,10,20]: 0.73171, 0.74405, 0.74550, 0.74740
+09/28 17:32 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0107.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 17:32 - Best valid NDCG@5 at epoch 106
+
+09/28 17:32 - Batch 0 / 277, Total_loss: 0.03173 = Recloss: 0.00174 + Divloss: 0.20505
+09/28 17:45 - Batch 138 / 277, Total_loss: 0.03014 = Recloss: 0.00114 + Divloss: 0.19827
+09/28 17:58 - Batch 276 / 277, Total_loss: 0.03091 = Recloss: 0.00165 + Divloss: 0.20004
+09/28 18:00 - Avg Epoch 108 / 150, Total_Loss: 0.03111 = Recloss: 0.00160 + Divloss: 0.20171
+09/28 18:00 - Valid Recall@[1,5,10,20]: 0.73154, 0.74455, 0.74601, 0.74763
+09/28 18:00 - Valid NDCG@[1,5,10,20]: 0.73154, 0.73916, 0.73964, 0.74004
+09/28 18:00 - Valid ACC@[1,5,10,20]: 0.73154, 0.74455, 0.74601, 0.74763
+09/28 18:00 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0108.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 18:00 - Best valid NDCG@5 at epoch 106
+
+09/28 18:00 - Batch 0 / 277, Total_loss: 0.03031 = Recloss: 0.00125 + Divloss: 0.19872
+09/28 18:13 - Batch 138 / 277, Total_loss: 0.03051 = Recloss: 0.00121 + Divloss: 0.20030
+09/28 18:27 - Batch 276 / 277, Total_loss: 0.03016 = Recloss: 0.00102 + Divloss: 0.19922
+09/28 18:28 - Avg Epoch 109 / 150, Total_Loss: 0.03083 = Recloss: 0.00140 + Divloss: 0.20122
+09/28 18:28 - Valid Recall@[1,5,10,20]: 0.73137, 0.74433, 0.74578, 0.74757
+09/28 18:28 - Valid NDCG@[1,5,10,20]: 0.73137, 0.73885, 0.73932, 0.73977
+09/28 18:28 - Valid ACC@[1,5,10,20]: 0.73137, 0.74433, 0.74578, 0.74757
+09/28 18:28 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0109.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 18:28 - Best valid NDCG@5 at epoch 106
+
+09/28 18:28 - Batch 0 / 277, Total_loss: 0.03047 = Recloss: 0.00162 + Divloss: 0.19723
+09/28 18:41 - Batch 138 / 277, Total_loss: 0.03024 = Recloss: 0.00109 + Divloss: 0.19928
+09/28 18:55 - Batch 276 / 277, Total_loss: 0.03022 = Recloss: 0.00085 + Divloss: 0.20085
+09/28 18:56 - Avg Epoch 110 / 150, Total_Loss: 0.03073 = Recloss: 0.00138 + Divloss: 0.20060
+09/28 18:56 - Valid Recall@[1,5,10,20]: 0.73205, 0.74444, 0.74590, 0.74740
+09/28 18:56 - Valid NDCG@[1,5,10,20]: 0.73205, 0.73919, 0.73967, 0.74005
+09/28 18:56 - Valid ACC@[1,5,10,20]: 0.73205, 0.74444, 0.74590, 0.74740
+09/28 18:56 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0110.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 18:56 - Best valid NDCG@5 at epoch 106
+
+09/28 18:56 - Batch 0 / 277, Total_loss: 0.03113 = Recloss: 0.00225 + Divloss: 0.19740
+09/28 19:09 - Batch 138 / 277, Total_loss: 0.03029 = Recloss: 0.00152 + Divloss: 0.19670
+09/28 19:23 - Batch 276 / 277, Total_loss: 0.03274 = Recloss: 0.00320 + Divloss: 0.20197
+09/28 19:24 - Avg Epoch 111 / 150, Total_Loss: 0.03064 = Recloss: 0.00138 + Divloss: 0.20007
+09/28 19:24 - Valid Recall@[1,5,10,20]: 0.73311, 0.74534, 0.74606, 0.74763
+09/28 19:24 - Valid NDCG@[1,5,10,20]: 0.73311, 0.74020, 0.74043, 0.74083
+09/28 19:24 - Valid ACC@[1,5,10,20]: 0.73311, 0.74534, 0.74606, 0.74763
+09/28 19:24 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0111.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 19:25 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70085192, 0.70796028, 0.71127028, 0.71257258, 0.71403766]),
+ 'MRR': np.float64(0.7056280962437019),
+ 'NDCG': array([0.70085192, 0.7053368 , 0.70685279, 0.7072767 , 0.70765458]),
+ 'Recall': array([0.70085192, 0.70796028, 0.71127028, 0.71257258, 0.71403766])}
+09/28 19:25 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 19:25 - Best valid NDCG@5 at epoch 111
+
+09/28 19:25 - Batch 0 / 277, Total_loss: 0.03007 = Recloss: 0.00084 + Divloss: 0.19990
+09/28 19:38 - Batch 138 / 277, Total_loss: 0.02996 = Recloss: 0.00126 + Divloss: 0.19625
+09/28 19:52 - Batch 276 / 277, Total_loss: 0.03013 = Recloss: 0.00194 + Divloss: 0.19273
+09/28 19:53 - Avg Epoch 112 / 150, Total_Loss: 0.03057 = Recloss: 0.00136 + Divloss: 0.19971
+09/28 19:53 - Valid Recall@[1,5,10,20]: 0.73422, 0.74495, 0.74623, 0.74740
+09/28 19:53 - Valid NDCG@[1,5,10,20]: 0.73422, 0.74032, 0.74073, 0.74103
+09/28 19:53 - Valid ACC@[1,5,10,20]: 0.73422, 0.74495, 0.74623, 0.74740
+09/28 19:53 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0112.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 19:54 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.7018829 , 0.70752618, 0.71029356, 0.712247  , 0.71376635]),
+ 'MRR': np.float64(0.7058378616199096),
+ 'NDCG': array([0.7018829 , 0.70544341, 0.706697  , 0.70732645, 0.70771253]),
+ 'Recall': array([0.7018829 , 0.70752618, 0.71029356, 0.712247  , 0.71376635])}
+09/28 19:54 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 19:54 - Best valid NDCG@5 at epoch 112
+
+09/28 19:54 - Batch 0 / 277, Total_loss: 0.03062 = Recloss: 0.00171 + Divloss: 0.19771
+09/28 20:08 - Batch 138 / 277, Total_loss: 0.02850 = Recloss: 0.00076 + Divloss: 0.18970
+09/28 20:21 - Batch 276 / 277, Total_loss: 0.03114 = Recloss: 0.00227 + Divloss: 0.19743
+09/28 20:22 - Avg Epoch 113 / 150, Total_Loss: 0.03063 = Recloss: 0.00132 + Divloss: 0.20043
+09/28 20:22 - Valid Recall@[1,5,10,20]: 0.73366, 0.74500, 0.74629, 0.74740
+09/28 20:22 - Valid NDCG@[1,5,10,20]: 0.73366, 0.74028, 0.74070, 0.74098
+09/28 20:22 - Valid ACC@[1,5,10,20]: 0.73366, 0.74500, 0.74629, 0.74740
+09/28 20:22 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0113.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 20:22 - Best valid NDCG@5 at epoch 112
+
+09/28 20:22 - Batch 0 / 277, Total_loss: 0.03023 = Recloss: 0.00145 + Divloss: 0.19677
+09/28 20:36 - Batch 138 / 277, Total_loss: 0.03022 = Recloss: 0.00074 + Divloss: 0.20161
+09/28 20:49 - Batch 276 / 277, Total_loss: 0.03094 = Recloss: 0.00202 + Divloss: 0.19770
+09/28 20:50 - Avg Epoch 114 / 150, Total_Loss: 0.03065 = Recloss: 0.00134 + Divloss: 0.20039
+09/28 20:50 - Valid Recall@[1,5,10,20]: 0.73378, 0.74495, 0.74601, 0.74746
+09/28 20:50 - Valid NDCG@[1,5,10,20]: 0.73378, 0.74019, 0.74052, 0.74089
+09/28 20:50 - Valid ACC@[1,5,10,20]: 0.73378, 0.74495, 0.74601, 0.74746
+09/28 20:50 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0114.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 20:50 - Best valid NDCG@5 at epoch 112
+
+09/28 20:51 - Batch 0 / 277, Total_loss: 0.03094 = Recloss: 0.00147 + Divloss: 0.20148
+09/28 21:04 - Batch 138 / 277, Total_loss: 0.03117 = Recloss: 0.00125 + Divloss: 0.20454
+09/28 21:18 - Batch 276 / 277, Total_loss: 0.03103 = Recloss: 0.00164 + Divloss: 0.20094
+09/28 21:19 - Avg Epoch 115 / 150, Total_Loss: 0.03071 = Recloss: 0.00133 + Divloss: 0.20086
+09/28 21:19 - Valid Recall@[1,5,10,20]: 0.73456, 0.74523, 0.74629, 0.74751
+09/28 21:19 - Valid NDCG@[1,5,10,20]: 0.73456, 0.74077, 0.74112, 0.74142
+09/28 21:19 - Valid ACC@[1,5,10,20]: 0.73456, 0.74523, 0.74629, 0.74751
+09/28 21:19 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0115.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 21:20 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70215421, 0.70834012, 0.71148733, 0.71262684, 0.71387487]),
+ 'MRR': np.float64(0.7063886488483268),
+ 'NDCG': array([0.70215421, 0.70605708, 0.70750574, 0.70787746, 0.7081917 ]),
+ 'Recall': array([0.70215421, 0.70834012, 0.71148733, 0.71262684, 0.71387487])}
+09/28 21:20 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 21:20 - Best valid NDCG@5 at epoch 115
+
+09/28 21:20 - Batch 0 / 277, Total_loss: 0.03074 = Recloss: 0.00139 + Divloss: 0.20065
+09/28 21:34 - Batch 138 / 277, Total_loss: 0.03033 = Recloss: 0.00118 + Divloss: 0.19927
+09/28 21:48 - Batch 276 / 277, Total_loss: 0.03034 = Recloss: 0.00125 + Divloss: 0.19886
+09/28 21:49 - Avg Epoch 116 / 150, Total_Loss: 0.03066 = Recloss: 0.00135 + Divloss: 0.20040
+09/28 21:49 - Valid Recall@[1,5,10,20]: 0.73545, 0.74517, 0.74645, 0.74746
+09/28 21:49 - Valid NDCG@[1,5,10,20]: 0.73545, 0.74113, 0.74154, 0.74180
+09/28 21:49 - Valid ACC@[1,5,10,20]: 0.73545, 0.74517, 0.74645, 0.74746
+09/28 21:49 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0116.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 21:50 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70307667, 0.70823159, 0.71154159, 0.71257258, 0.71392913]),
+ 'MRR': np.float64(0.706849598265134),
+ 'NDCG': array([0.70307667, 0.70632906, 0.70785773, 0.70820042, 0.7085449 ]),
+ 'Recall': array([0.70307667, 0.70823159, 0.71154159, 0.71257258, 0.71392913])}
+09/28 21:50 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 21:50 - Best valid NDCG@5 at epoch 116
+
+09/28 21:50 - Batch 0 / 277, Total_loss: 0.02955 = Recloss: 0.00104 + Divloss: 0.19494
+09/28 22:04 - Batch 138 / 277, Total_loss: 0.02904 = Recloss: 0.00134 + Divloss: 0.18942
+09/28 22:18 - Batch 276 / 277, Total_loss: 0.02997 = Recloss: 0.00090 + Divloss: 0.19880
+09/28 22:19 - Avg Epoch 117 / 150, Total_Loss: 0.03003 = Recloss: 0.00128 + Divloss: 0.19656
+09/28 22:19 - Valid Recall@[1,5,10,20]: 0.73461, 0.74495, 0.74629, 0.74757
+09/28 22:19 - Valid NDCG@[1,5,10,20]: 0.73461, 0.74065, 0.74107, 0.74139
+09/28 22:19 - Valid ACC@[1,5,10,20]: 0.73461, 0.74495, 0.74629, 0.74757
+09/28 22:19 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0117.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 22:19 - Best valid NDCG@5 at epoch 116
+
+09/28 22:19 - Batch 0 / 277, Total_loss: 0.02941 = Recloss: 0.00138 + Divloss: 0.19162
+09/28 22:33 - Batch 138 / 277, Total_loss: 0.02944 = Recloss: 0.00170 + Divloss: 0.18960
+09/28 22:47 - Batch 276 / 277, Total_loss: 0.02937 = Recloss: 0.00101 + Divloss: 0.19387
+09/28 22:48 - Avg Epoch 118 / 150, Total_Loss: 0.02987 = Recloss: 0.00140 + Divloss: 0.19467
+09/28 22:48 - Valid Recall@[1,5,10,20]: 0.73473, 0.74483, 0.74634, 0.74763
+09/28 22:48 - Valid NDCG@[1,5,10,20]: 0.73473, 0.74063, 0.74112, 0.74144
+09/28 22:48 - Valid ACC@[1,5,10,20]: 0.73473, 0.74483, 0.74634, 0.74763
+09/28 22:48 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0118.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 22:48 - Best valid NDCG@5 at epoch 116
+
+09/28 22:48 - Batch 0 / 277, Total_loss: 0.02947 = Recloss: 0.00131 + Divloss: 0.19255
+09/28 23:01 - Batch 138 / 277, Total_loss: 0.02935 = Recloss: 0.00091 + Divloss: 0.19441
+09/28 23:15 - Batch 276 / 277, Total_loss: 0.02829 = Recloss: 0.00113 + Divloss: 0.18569
+09/28 23:16 - Avg Epoch 119 / 150, Total_Loss: 0.02958 = Recloss: 0.00130 + Divloss: 0.19331
+09/28 23:16 - Valid Recall@[1,5,10,20]: 0.73551, 0.74534, 0.74612, 0.74763
+09/28 23:16 - Valid NDCG@[1,5,10,20]: 0.73551, 0.74124, 0.74149, 0.74187
+09/28 23:16 - Valid ACC@[1,5,10,20]: 0.73551, 0.74534, 0.74612, 0.74763
+09/28 23:16 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0119.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 23:17 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70269684, 0.70855717, 0.71165012, 0.71246405, 0.71409192]),
+ 'MRR': np.float64(0.7067172281125189),
+ 'NDCG': array([0.70269684, 0.70639429, 0.70779662, 0.70806702, 0.70848136]),
+ 'Recall': array([0.70269684, 0.70855717, 0.71165012, 0.71246405, 0.71409192])}
+09/28 23:17 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 23:17 - Best valid NDCG@5 at epoch 119
+
+09/28 23:17 - Batch 0 / 277, Total_loss: 0.02972 = Recloss: 0.00198 + Divloss: 0.18966
+09/28 23:30 - Batch 138 / 277, Total_loss: 0.02949 = Recloss: 0.00064 + Divloss: 0.19722
+09/28 23:44 - Batch 276 / 277, Total_loss: 0.02925 = Recloss: 0.00145 + Divloss: 0.19002
+09/28 23:45 - Avg Epoch 120 / 150, Total_Loss: 0.02945 = Recloss: 0.00126 + Divloss: 0.19276
+09/28 23:45 - Valid Recall@[1,5,10,20]: 0.73556, 0.74511, 0.74629, 0.74774
+09/28 23:45 - Valid NDCG@[1,5,10,20]: 0.73556, 0.74126, 0.74164, 0.74200
+09/28 23:45 - Valid ACC@[1,5,10,20]: 0.73556, 0.74511, 0.74629, 0.74774
+09/28 23:45 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0120.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/28 23:46 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70329372, 0.70947962, 0.71154159, 0.71251831, 0.71414618]),
+ 'MRR': np.float64(0.7072110556529699),
+ 'NDCG': array([0.70329372, 0.70719659, 0.70814798, 0.70845599, 0.70886293]),
+ 'Recall': array([0.70329372, 0.70947962, 0.71154159, 0.71251831, 0.71414618])}
+09/28 23:46 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/28 23:46 - Best valid NDCG@5 at epoch 120
+
+09/28 23:46 - Batch 0 / 277, Total_loss: 0.03024 = Recloss: 0.00202 + Divloss: 0.19288
+09/29 00:00 - Batch 138 / 277, Total_loss: 0.02884 = Recloss: 0.00115 + Divloss: 0.18930
+09/29 00:13 - Batch 276 / 277, Total_loss: 0.03036 = Recloss: 0.00135 + Divloss: 0.19839
+09/29 00:14 - Avg Epoch 121 / 150, Total_Loss: 0.02944 = Recloss: 0.00125 + Divloss: 0.19275
+09/29 00:14 - Valid Recall@[1,5,10,20]: 0.73517, 0.74545, 0.74640, 0.74779
+09/29 00:14 - Valid NDCG@[1,5,10,20]: 0.73517, 0.74120, 0.74150, 0.74185
+09/29 00:14 - Valid ACC@[1,5,10,20]: 0.73517, 0.74545, 0.74640, 0.74779
+09/29 00:14 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0121.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 00:14 - Best valid NDCG@5 at epoch 120
+
+09/29 00:14 - Batch 0 / 277, Total_loss: 0.03016 = Recloss: 0.00216 + Divloss: 0.19145
+09/29 00:27 - Batch 138 / 277, Total_loss: 0.02797 = Recloss: 0.00166 + Divloss: 0.17985
+09/29 00:41 - Batch 276 / 277, Total_loss: 0.02827 = Recloss: 0.00111 + Divloss: 0.18571
+09/29 00:42 - Avg Epoch 122 / 150, Total_Loss: 0.02888 = Recloss: 0.00128 + Divloss: 0.18869
+09/29 00:42 - Valid Recall@[1,5,10,20]: 0.73556, 0.74523, 0.74629, 0.74763
+09/29 00:42 - Valid NDCG@[1,5,10,20]: 0.73556, 0.74122, 0.74155, 0.74189
+09/29 00:42 - Valid ACC@[1,5,10,20]: 0.73556, 0.74523, 0.74629, 0.74763
+09/29 00:42 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0122.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 00:42 - Best valid NDCG@5 at epoch 120
+
+09/29 00:42 - Batch 0 / 277, Total_loss: 0.02874 = Recloss: 0.00076 + Divloss: 0.19128
+09/29 00:55 - Batch 138 / 277, Total_loss: 0.02721 = Recloss: 0.00093 + Divloss: 0.17971
+09/29 01:09 - Batch 276 / 277, Total_loss: 0.02870 = Recloss: 0.00121 + Divloss: 0.18798
+09/29 01:10 - Avg Epoch 123 / 150, Total_Loss: 0.02844 = Recloss: 0.00126 + Divloss: 0.18583
+09/29 01:10 - Valid Recall@[1,5,10,20]: 0.73540, 0.74506, 0.74640, 0.74763
+09/29 01:10 - Valid NDCG@[1,5,10,20]: 0.73540, 0.74103, 0.74146, 0.74176
+09/29 01:10 - Valid ACC@[1,5,10,20]: 0.73540, 0.74506, 0.74640, 0.74763
+09/29 01:10 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0123.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 01:10 - Best valid NDCG@5 at epoch 120
+
+09/29 01:10 - Batch 0 / 277, Total_loss: 0.02806 = Recloss: 0.00106 + Divloss: 0.18458
+09/29 01:23 - Batch 138 / 277, Total_loss: 0.02809 = Recloss: 0.00064 + Divloss: 0.18762
+09/29 01:36 - Batch 276 / 277, Total_loss: 0.02879 = Recloss: 0.00086 + Divloss: 0.19094
+09/29 01:37 - Avg Epoch 124 / 150, Total_Loss: 0.02844 = Recloss: 0.00127 + Divloss: 0.18579
+09/29 01:37 - Valid Recall@[1,5,10,20]: 0.73623, 0.74517, 0.74634, 0.74763
+09/29 01:37 - Valid NDCG@[1,5,10,20]: 0.73623, 0.74146, 0.74184, 0.74216
+09/29 01:37 - Valid ACC@[1,5,10,20]: 0.73623, 0.74517, 0.74634, 0.74763
+09/29 01:37 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0124.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 01:39 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.7036193 , 0.708937  , 0.71110749, 0.7126811 , 0.71414618]),
+ 'MRR': np.float64(0.7072521795473217),
+ 'NDCG': array([0.7036193 , 0.70697439, 0.70800836, 0.70852038, 0.70888708]),
+ 'Recall': array([0.7036193 , 0.708937  , 0.71110749, 0.7126811 , 0.71414618])}
+09/29 01:39 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 01:39 - Best valid NDCG@5 at epoch 124
+
+09/29 01:39 - Batch 0 / 277, Total_loss: 0.02858 = Recloss: 0.00112 + Divloss: 0.18778
+09/29 01:52 - Batch 138 / 277, Total_loss: 0.02757 = Recloss: 0.00074 + Divloss: 0.18348
+09/29 02:05 - Batch 276 / 277, Total_loss: 0.02789 = Recloss: 0.00115 + Divloss: 0.18277
+09/29 02:06 - Avg Epoch 125 / 150, Total_Loss: 0.02847 = Recloss: 0.00123 + Divloss: 0.18626
+09/29 02:06 - Valid Recall@[1,5,10,20]: 0.73690, 0.74534, 0.74651, 0.74763
+09/29 02:06 - Valid NDCG@[1,5,10,20]: 0.73690, 0.74185, 0.74221, 0.74249
+09/29 02:06 - Valid ACC@[1,5,10,20]: 0.73690, 0.74534, 0.74651, 0.74763
+09/29 02:06 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0125.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 02:07 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70497585, 0.70909979, 0.71132454, 0.71284389, 0.71414618]),
+ 'MRR': np.float64(0.7079394638951656),
+ 'NDCG': array([0.70497585, 0.70757777, 0.70858322, 0.7090719 , 0.70939752]),
+ 'Recall': array([0.70497585, 0.70909979, 0.71132454, 0.71284389, 0.71414618])}
+09/29 02:07 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 02:07 - Best valid NDCG@5 at epoch 125
+
+09/29 02:07 - Batch 0 / 277, Total_loss: 0.02780 = Recloss: 0.00122 + Divloss: 0.18172
+09/29 02:21 - Batch 138 / 277, Total_loss: 0.02780 = Recloss: 0.00084 + Divloss: 0.18434
+09/29 02:34 - Batch 276 / 277, Total_loss: 0.02757 = Recloss: 0.00125 + Divloss: 0.17998
+09/29 02:35 - Avg Epoch 126 / 150, Total_Loss: 0.02833 = Recloss: 0.00122 + Divloss: 0.18533
+09/29 02:35 - Valid Recall@[1,5,10,20]: 0.73718, 0.74528, 0.74612, 0.74779
+09/29 02:35 - Valid NDCG@[1,5,10,20]: 0.73718, 0.74197, 0.74224, 0.74266
+09/29 02:35 - Valid ACC@[1,5,10,20]: 0.73718, 0.74528, 0.74612, 0.74779
+09/29 02:35 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0126.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 02:36 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70508438, 0.70861143, 0.71148733, 0.7126811 , 0.71420044]),
+ 'MRR': np.float64(0.7079224239147138),
+ 'NDCG': array([0.70508438, 0.7073097 , 0.70862231, 0.70900699, 0.70939332]),
+ 'Recall': array([0.70508438, 0.70861143, 0.71148733, 0.7126811 , 0.71420044])}
+09/29 02:36 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 02:36 - Best valid NDCG@5 at epoch 126
+
+09/29 02:36 - Batch 0 / 277, Total_loss: 0.02781 = Recloss: 0.00192 + Divloss: 0.17705
+09/29 02:50 - Batch 138 / 277, Total_loss: 0.02828 = Recloss: 0.00126 + Divloss: 0.18472
+09/29 03:03 - Batch 276 / 277, Total_loss: 0.02794 = Recloss: 0.00061 + Divloss: 0.18681
+09/29 03:04 - Avg Epoch 127 / 150, Total_Loss: 0.02828 = Recloss: 0.00120 + Divloss: 0.18521
+09/29 03:04 - Valid Recall@[1,5,10,20]: 0.73657, 0.74534, 0.74623, 0.74807
+09/29 03:04 - Valid NDCG@[1,5,10,20]: 0.73657, 0.74179, 0.74208, 0.74253
+09/29 03:04 - Valid ACC@[1,5,10,20]: 0.73657, 0.74534, 0.74623, 0.74807
+09/29 03:04 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0127.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 03:04 - Best valid NDCG@5 at epoch 126
+
+09/29 03:04 - Batch 0 / 277, Total_loss: 0.02696 = Recloss: 0.00094 + Divloss: 0.17789
+09/29 03:18 - Batch 138 / 277, Total_loss: 0.02893 = Recloss: 0.00110 + Divloss: 0.19027
+09/29 03:31 - Batch 276 / 277, Total_loss: 0.02807 = Recloss: 0.00082 + Divloss: 0.18627
+09/29 03:32 - Avg Epoch 128 / 150, Total_Loss: 0.02832 = Recloss: 0.00122 + Divloss: 0.18528
+09/29 03:32 - Valid Recall@[1,5,10,20]: 0.73802, 0.74534, 0.74645, 0.74802
+09/29 03:32 - Valid NDCG@[1,5,10,20]: 0.73802, 0.74227, 0.74262, 0.74300
+09/29 03:32 - Valid ACC@[1,5,10,20]: 0.73802, 0.74534, 0.74645, 0.74802
+09/29 03:32 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0128.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 03:33 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.7051929 , 0.70871995, 0.71132454, 0.71273536, 0.71392913]),
+ 'MRR': np.float64(0.7079376255654455),
+ 'NDCG': array([0.7051929 , 0.70741822, 0.70859379, 0.70904068, 0.70934556]),
+ 'Recall': array([0.7051929 , 0.70871995, 0.71132454, 0.71273536, 0.71392913])}
+09/29 03:33 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 03:33 - Best valid NDCG@5 at epoch 128
+
+09/29 03:33 - Batch 0 / 277, Total_loss: 0.02807 = Recloss: 0.00146 + Divloss: 0.18187
+09/29 03:47 - Batch 138 / 277, Total_loss: 0.02923 = Recloss: 0.00148 + Divloss: 0.18972
+09/29 04:00 - Batch 276 / 277, Total_loss: 0.02842 = Recloss: 0.00149 + Divloss: 0.18412
+09/29 04:01 - Avg Epoch 129 / 150, Total_Loss: 0.02825 = Recloss: 0.00120 + Divloss: 0.18492
+09/29 04:01 - Valid Recall@[1,5,10,20]: 0.73847, 0.74534, 0.74629, 0.74796
+09/29 04:01 - Valid NDCG@[1,5,10,20]: 0.73847, 0.74249, 0.74280, 0.74321
+09/29 04:01 - Valid ACC@[1,5,10,20]: 0.73847, 0.74534, 0.74629, 0.74796
+09/29 04:01 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0129.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 04:02 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70492159, 0.708937  , 0.71143307, 0.71284389, 0.71403766]),
+ 'MRR': np.float64(0.7078990277203445),
+ 'NDCG': array([0.70492159, 0.70745503, 0.70859614, 0.7090433 , 0.70934885]),
+ 'Recall': array([0.70492159, 0.708937  , 0.71143307, 0.71284389, 0.71403766])}
+09/29 04:02 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 04:02 - Best valid NDCG@5 at epoch 129
+
+09/29 04:02 - Batch 0 / 277, Total_loss: 0.02860 = Recloss: 0.00164 + Divloss: 0.18432
+09/29 04:16 - Batch 138 / 277, Total_loss: 0.02838 = Recloss: 0.00193 + Divloss: 0.18085
+09/29 04:29 - Batch 276 / 277, Total_loss: 0.02805 = Recloss: 0.00096 + Divloss: 0.18526
+09/29 04:30 - Avg Epoch 130 / 150, Total_Loss: 0.02823 = Recloss: 0.00119 + Divloss: 0.18487
+09/29 04:30 - Valid Recall@[1,5,10,20]: 0.73819, 0.74534, 0.74634, 0.74774
+09/29 04:30 - Valid NDCG@[1,5,10,20]: 0.73819, 0.74240, 0.74272, 0.74307
+09/29 04:30 - Valid ACC@[1,5,10,20]: 0.73819, 0.74534, 0.74634, 0.74774
+09/29 04:30 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0130.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 04:30 - Best valid NDCG@5 at epoch 129
+
+09/29 04:30 - Batch 0 / 277, Total_loss: 0.02771 = Recloss: 0.00207 + Divloss: 0.17532
+09/29 04:43 - Batch 138 / 277, Total_loss: 0.02849 = Recloss: 0.00088 + Divloss: 0.18874
+09/29 04:57 - Batch 276 / 277, Total_loss: 0.02701 = Recloss: 0.00071 + Divloss: 0.17978
+09/29 04:58 - Avg Epoch 131 / 150, Total_Loss: 0.02829 = Recloss: 0.00120 + Divloss: 0.18519
+09/29 04:58 - Valid Recall@[1,5,10,20]: 0.73864, 0.74523, 0.74657, 0.74785
+09/29 04:58 - Valid NDCG@[1,5,10,20]: 0.73864, 0.74251, 0.74294, 0.74326
+09/29 04:58 - Valid ACC@[1,5,10,20]: 0.73864, 0.74523, 0.74657, 0.74785
+09/29 04:58 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0131.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 04:59 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70383634, 0.70920831, 0.71137881, 0.71295241, 0.71387487]),
+ 'MRR': np.float64(0.7074489852626291),
+ 'NDCG': array([0.70383634, 0.70722568, 0.70825113, 0.70875731, 0.70899486]),
+ 'Recall': array([0.70383634, 0.70920831, 0.71137881, 0.71295241, 0.71387487])}
+09/29 04:59 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 04:59 - Best valid NDCG@5 at epoch 131
+
+09/29 04:59 - Batch 0 / 277, Total_loss: 0.02872 = Recloss: 0.00188 + Divloss: 0.18351
+09/29 05:12 - Batch 138 / 277, Total_loss: 0.02870 = Recloss: 0.00180 + Divloss: 0.18395
+09/29 05:26 - Batch 276 / 277, Total_loss: 0.02781 = Recloss: 0.00116 + Divloss: 0.18223
+09/29 05:27 - Avg Epoch 132 / 150, Total_Loss: 0.02816 = Recloss: 0.00118 + Divloss: 0.18448
+09/29 05:27 - Valid Recall@[1,5,10,20]: 0.73869, 0.74523, 0.74651, 0.74763
+09/29 05:27 - Valid NDCG@[1,5,10,20]: 0.73869, 0.74250, 0.74292, 0.74321
+09/29 05:27 - Valid ACC@[1,5,10,20]: 0.73869, 0.74523, 0.74651, 0.74763
+09/29 05:27 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0132.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 05:27 - Best valid NDCG@5 at epoch 131
+
+09/29 05:27 - Batch 0 / 277, Total_loss: 0.02803 = Recloss: 0.00094 + Divloss: 0.18522
+09/29 05:40 - Batch 138 / 277, Total_loss: 0.02729 = Recloss: 0.00133 + Divloss: 0.17747
+09/29 05:54 - Batch 276 / 277, Total_loss: 0.02803 = Recloss: 0.00119 + Divloss: 0.18349
+09/29 05:55 - Avg Epoch 133 / 150, Total_Loss: 0.02800 = Recloss: 0.00119 + Divloss: 0.18330
+09/29 05:55 - Valid Recall@[1,5,10,20]: 0.73908, 0.74550, 0.74657, 0.74802
+09/29 05:55 - Valid NDCG@[1,5,10,20]: 0.73908, 0.74276, 0.74308, 0.74344
+09/29 05:55 - Valid ACC@[1,5,10,20]: 0.73908, 0.74550, 0.74657, 0.74802
+09/29 05:55 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0133.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 05:56 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70535569, 0.7093711 , 0.71121602, 0.71273536, 0.71382061]),
+ 'MRR': np.float64(0.7081403862778398),
+ 'NDCG': array([0.70535569, 0.70788913, 0.70871911, 0.7092068 , 0.70947773]),
+ 'Recall': array([0.70535569, 0.7093711 , 0.71121602, 0.71273536, 0.71382061])}
+09/29 05:56 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 05:56 - Best valid NDCG@5 at epoch 133
+
+09/29 05:56 - Batch 0 / 277, Total_loss: 0.02923 = Recloss: 0.00160 + Divloss: 0.18887
+09/29 06:10 - Batch 138 / 277, Total_loss: 0.02694 = Recloss: 0.00068 + Divloss: 0.17951
+09/29 06:23 - Batch 276 / 277, Total_loss: 0.02802 = Recloss: 0.00158 + Divloss: 0.18077
+09/29 06:24 - Avg Epoch 134 / 150, Total_Loss: 0.02787 = Recloss: 0.00120 + Divloss: 0.18239
+09/29 06:24 - Valid Recall@[1,5,10,20]: 0.73864, 0.74517, 0.74657, 0.74802
+09/29 06:24 - Valid NDCG@[1,5,10,20]: 0.73864, 0.74243, 0.74288, 0.74324
+09/29 06:24 - Valid ACC@[1,5,10,20]: 0.73864, 0.74517, 0.74657, 0.74802
+09/29 06:24 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0134.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 06:24 - Best valid NDCG@5 at epoch 133
+
+09/29 06:24 - Batch 0 / 277, Total_loss: 0.02623 = Recloss: 0.00083 + Divloss: 0.17365
+09/29 06:38 - Batch 138 / 277, Total_loss: 0.02741 = Recloss: 0.00133 + Divloss: 0.17836
+09/29 06:51 - Batch 276 / 277, Total_loss: 0.02680 = Recloss: 0.00097 + Divloss: 0.17660
+09/29 06:52 - Avg Epoch 135 / 150, Total_Loss: 0.02777 = Recloss: 0.00118 + Divloss: 0.18174
+09/29 06:52 - Valid Recall@[1,5,10,20]: 0.73869, 0.74556, 0.74651, 0.74813
+09/29 06:52 - Valid NDCG@[1,5,10,20]: 0.73869, 0.74275, 0.74306, 0.74345
+09/29 06:52 - Valid ACC@[1,5,10,20]: 0.73869, 0.74556, 0.74651, 0.74813
+09/29 06:52 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0135.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 06:52 - Best valid NDCG@5 at epoch 133
+
+09/29 06:52 - Batch 0 / 277, Total_loss: 0.02896 = Recloss: 0.00109 + Divloss: 0.19056
+09/29 07:06 - Batch 138 / 277, Total_loss: 0.02824 = Recloss: 0.00182 + Divloss: 0.18060
+09/29 07:19 - Batch 276 / 277, Total_loss: 0.02844 = Recloss: 0.00104 + Divloss: 0.18735
+09/29 07:20 - Avg Epoch 136 / 150, Total_Loss: 0.02781 = Recloss: 0.00117 + Divloss: 0.18215
+09/29 07:20 - Valid Recall@[1,5,10,20]: 0.73852, 0.74539, 0.74668, 0.74796
+09/29 07:20 - Valid NDCG@[1,5,10,20]: 0.73852, 0.74259, 0.74302, 0.74334
+09/29 07:20 - Valid ACC@[1,5,10,20]: 0.73852, 0.74539, 0.74668, 0.74796
+09/29 07:20 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0136.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 07:20 - Best valid NDCG@5 at epoch 133
+
+09/29 07:20 - Batch 0 / 277, Total_loss: 0.02798 = Recloss: 0.00165 + Divloss: 0.18004
+09/29 07:33 - Batch 138 / 277, Total_loss: 0.02759 = Recloss: 0.00099 + Divloss: 0.18185
+09/29 07:47 - Batch 276 / 277, Total_loss: 0.02814 = Recloss: 0.00118 + Divloss: 0.18437
+09/29 07:48 - Avg Epoch 137 / 150, Total_Loss: 0.02833 = Recloss: 0.00119 + Divloss: 0.18560
+09/29 07:48 - Valid Recall@[1,5,10,20]: 0.73819, 0.74567, 0.74645, 0.74796
+09/29 07:48 - Valid NDCG@[1,5,10,20]: 0.73819, 0.74265, 0.74291, 0.74329
+09/29 07:48 - Valid ACC@[1,5,10,20]: 0.73819, 0.74567, 0.74645, 0.74796
+09/29 07:48 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0137.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 07:48 - Best valid NDCG@5 at epoch 133
+
+09/29 07:48 - Batch 0 / 277, Total_loss: 0.02827 = Recloss: 0.00113 + Divloss: 0.18555
+09/29 08:01 - Batch 138 / 277, Total_loss: 0.02818 = Recloss: 0.00154 + Divloss: 0.18214
+09/29 08:15 - Batch 276 / 277, Total_loss: 0.02857 = Recloss: 0.00126 + Divloss: 0.18671
+09/29 08:16 - Avg Epoch 138 / 150, Total_Loss: 0.02797 = Recloss: 0.00119 + Divloss: 0.18305
+09/29 08:16 - Valid Recall@[1,5,10,20]: 0.73841, 0.74578, 0.74668, 0.74802
+09/29 08:16 - Valid NDCG@[1,5,10,20]: 0.73841, 0.74275, 0.74303, 0.74336
+09/29 08:16 - Valid ACC@[1,5,10,20]: 0.73841, 0.74578, 0.74668, 0.74802
+09/29 08:16 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0138.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 08:16 - Best valid NDCG@5 at epoch 133
+
+09/29 08:16 - Batch 0 / 277, Total_loss: 0.02673 = Recloss: 0.00080 + Divloss: 0.17729
+09/29 08:30 - Batch 138 / 277, Total_loss: 0.02832 = Recloss: 0.00150 + Divloss: 0.18333
+09/29 08:43 - Batch 276 / 277, Total_loss: 0.02850 = Recloss: 0.00161 + Divloss: 0.18389
+09/29 08:45 - Avg Epoch 139 / 150, Total_Loss: 0.02802 = Recloss: 0.00121 + Divloss: 0.18332
+09/29 08:45 - Valid Recall@[1,5,10,20]: 0.73914, 0.74573, 0.74640, 0.74813
+09/29 08:45 - Valid NDCG@[1,5,10,20]: 0.73914, 0.74300, 0.74322, 0.74365
+09/29 08:45 - Valid ACC@[1,5,10,20]: 0.73914, 0.74573, 0.74640, 0.74813
+09/29 08:45 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0139.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 08:46 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70589831, 0.70975094, 0.71159585, 0.7126811 , 0.71382061]),
+ 'MRR': np.float64(0.7085586887740063),
+ 'NDCG': array([0.70589831, 0.70832905, 0.70916616, 0.70951426, 0.70980162]),
+ 'Recall': array([0.70589831, 0.70975094, 0.71159585, 0.7126811 , 0.71382061])}
+09/29 08:46 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 08:46 - Best valid NDCG@5 at epoch 139
+
+09/29 08:46 - Batch 0 / 277, Total_loss: 0.02885 = Recloss: 0.00081 + Divloss: 0.19164
+09/29 08:59 - Batch 138 / 277, Total_loss: 0.02833 = Recloss: 0.00186 + Divloss: 0.18103
+09/29 09:13 - Batch 276 / 277, Total_loss: 0.02737 = Recloss: 0.00115 + Divloss: 0.17921
+09/29 09:14 - Avg Epoch 140 / 150, Total_Loss: 0.02811 = Recloss: 0.00116 + Divloss: 0.18423
+09/29 09:14 - Valid Recall@[1,5,10,20]: 0.73975, 0.74578, 0.74673, 0.74785
+09/29 09:14 - Valid NDCG@[1,5,10,20]: 0.73975, 0.74319, 0.74348, 0.74376
+09/29 09:14 - Valid ACC@[1,5,10,20]: 0.73975, 0.74578, 0.74673, 0.74785
+09/29 09:14 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0140.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 09:15 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70676651, 0.70985946, 0.71170438, 0.71278963, 0.7139834 ]),
+ 'MRR': np.float64(0.7090468332829951),
+ 'NDCG': array([0.70676651, 0.70871794, 0.70954991, 0.70989895, 0.71020184]),
+ 'Recall': array([0.70676651, 0.70985946, 0.71170438, 0.71278963, 0.7139834 ])}
+09/29 09:15 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 09:15 - Best valid NDCG@5 at epoch 140
+
+09/29 09:15 - Batch 0 / 277, Total_loss: 0.02787 = Recloss: 0.00121 + Divloss: 0.18232
+09/29 09:29 - Batch 138 / 277, Total_loss: 0.02753 = Recloss: 0.00102 + Divloss: 0.18129
+09/29 09:43 - Batch 276 / 277, Total_loss: 0.02917 = Recloss: 0.00141 + Divloss: 0.18979
+09/29 09:44 - Avg Epoch 141 / 150, Total_Loss: 0.02812 = Recloss: 0.00115 + Divloss: 0.18442
+09/29 09:44 - Valid Recall@[1,5,10,20]: 0.74009, 0.74590, 0.74673, 0.74818
+09/29 09:44 - Valid NDCG@[1,5,10,20]: 0.74009, 0.74338, 0.74365, 0.74401
+09/29 09:44 - Valid ACC@[1,5,10,20]: 0.74009, 0.74590, 0.74673, 0.74818
+09/29 09:44 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0141.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 09:45 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70654946, 0.70991372, 0.71175864, 0.71273536, 0.71420044]),
+ 'MRR': np.float64(0.7089691996687185),
+ 'NDCG': array([0.70654946, 0.70867207, 0.70950503, 0.70982384, 0.7101873 ]),
+ 'Recall': array([0.70654946, 0.70991372, 0.71175864, 0.71273536, 0.71420044])}
+09/29 09:45 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 09:45 - Best valid NDCG@5 at epoch 141
+
+09/29 09:45 - Batch 0 / 277, Total_loss: 0.02857 = Recloss: 0.00120 + Divloss: 0.18709
+09/29 09:59 - Batch 138 / 277, Total_loss: 0.02904 = Recloss: 0.00166 + Divloss: 0.18718
+09/29 10:12 - Batch 276 / 277, Total_loss: 0.02797 = Recloss: 0.00095 + Divloss: 0.18476
+09/29 10:13 - Avg Epoch 142 / 150, Total_Loss: 0.02812 = Recloss: 0.00118 + Divloss: 0.18417
+09/29 10:13 - Valid Recall@[1,5,10,20]: 0.74042, 0.74556, 0.74657, 0.74807
+09/29 10:13 - Valid NDCG@[1,5,10,20]: 0.74042, 0.74339, 0.74372, 0.74410
+09/29 10:13 - Valid ACC@[1,5,10,20]: 0.74042, 0.74556, 0.74657, 0.74807
+09/29 10:13 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0142.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 10:15 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70616962, 0.70931684, 0.71159585, 0.71246405, 0.71392913]),
+ 'MRR': np.float64(0.7086288289779746),
+ 'NDCG': array([0.70616962, 0.70815529, 0.70922411, 0.70950029, 0.70986702]),
+ 'Recall': array([0.70616962, 0.70931684, 0.71159585, 0.71246405, 0.71392913])}
+09/29 10:15 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 10:15 - Best valid NDCG@5 at epoch 142
+
+09/29 10:15 - Batch 0 / 277, Total_loss: 0.02827 = Recloss: 0.00131 + Divloss: 0.18434
+09/29 10:28 - Batch 138 / 277, Total_loss: 0.02728 = Recloss: 0.00127 + Divloss: 0.17788
+09/29 10:42 - Batch 276 / 277, Total_loss: 0.02757 = Recloss: 0.00098 + Divloss: 0.18177
+09/29 10:43 - Avg Epoch 143 / 150, Total_Loss: 0.02843 = Recloss: 0.00117 + Divloss: 0.18638
+09/29 10:43 - Valid Recall@[1,5,10,20]: 0.74048, 0.74567, 0.74673, 0.74813
+09/29 10:43 - Valid NDCG@[1,5,10,20]: 0.74048, 0.74347, 0.74380, 0.74414
+09/29 10:43 - Valid ACC@[1,5,10,20]: 0.74048, 0.74567, 0.74673, 0.74813
+09/29 10:43 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0143.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 10:44 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70622389, 0.7093711 , 0.71154159, 0.71278963, 0.71382061]),
+ 'MRR': np.float64(0.7086777079553411),
+ 'NDCG': array([0.70622389, 0.70820956, 0.7092354 , 0.70963522, 0.70988694]),
+ 'Recall': array([0.70622389, 0.7093711 , 0.71154159, 0.71278963, 0.71382061])}
+09/29 10:44 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 10:44 - Best valid NDCG@5 at epoch 143
+
+09/29 10:44 - Batch 0 / 277, Total_loss: 0.02863 = Recloss: 0.00151 + Divloss: 0.18538
+09/29 10:57 - Batch 138 / 277, Total_loss: 0.02678 = Recloss: 0.00061 + Divloss: 0.17895
+09/29 11:11 - Batch 276 / 277, Total_loss: 0.02755 = Recloss: 0.00131 + Divloss: 0.17938
+09/29 11:12 - Avg Epoch 144 / 150, Total_Loss: 0.02807 = Recloss: 0.00114 + Divloss: 0.18410
+09/29 11:12 - Valid Recall@[1,5,10,20]: 0.74020, 0.74562, 0.74673, 0.74813
+09/29 11:12 - Valid NDCG@[1,5,10,20]: 0.74020, 0.74336, 0.74373, 0.74407
+09/29 11:12 - Valid ACC@[1,5,10,20]: 0.74020, 0.74562, 0.74673, 0.74813
+09/29 11:12 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0144.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 11:12 - Best valid NDCG@5 at epoch 143
+
+09/29 11:12 - Batch 0 / 277, Total_loss: 0.02812 = Recloss: 0.00155 + Divloss: 0.18165
+09/29 11:26 - Batch 138 / 277, Total_loss: 0.02747 = Recloss: 0.00096 + Divloss: 0.18124
+09/29 11:40 - Batch 276 / 277, Total_loss: 0.02850 = Recloss: 0.00153 + Divloss: 0.18439
+09/29 11:41 - Avg Epoch 145 / 150, Total_Loss: 0.02804 = Recloss: 0.00110 + Divloss: 0.18423
+09/29 11:41 - Valid Recall@[1,5,10,20]: 0.74020, 0.74606, 0.74679, 0.74802
+09/29 11:41 - Valid NDCG@[1,5,10,20]: 0.74020, 0.74355, 0.74377, 0.74408
+09/29 11:41 - Valid ACC@[1,5,10,20]: 0.74020, 0.74606, 0.74679, 0.74802
+09/29 11:41 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0145.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 11:42 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70654946, 0.70996799, 0.71202995, 0.71262684, 0.7139834 ]),
+ 'MRR': np.float64(0.709037115703511),
+ 'NDCG': array([0.70654946, 0.70870631, 0.70966422, 0.70986146, 0.71020453]),
+ 'Recall': array([0.70654946, 0.70996799, 0.71202995, 0.71262684, 0.7139834 ])}
+09/29 11:42 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 11:42 - Best valid NDCG@5 at epoch 145
+
+09/29 11:42 - Batch 0 / 277, Total_loss: 0.02888 = Recloss: 0.00131 + Divloss: 0.18849
+09/29 11:56 - Batch 138 / 277, Total_loss: 0.02698 = Recloss: 0.00080 + Divloss: 0.17901
+09/29 12:09 - Batch 276 / 277, Total_loss: 0.02772 = Recloss: 0.00102 + Divloss: 0.18257
+09/29 12:11 - Avg Epoch 146 / 150, Total_Loss: 0.02796 = Recloss: 0.00110 + Divloss: 0.18359
+09/29 12:11 - Valid Recall@[1,5,10,20]: 0.74053, 0.74584, 0.74673, 0.74785
+09/29 12:11 - Valid NDCG@[1,5,10,20]: 0.74053, 0.74369, 0.74397, 0.74425
+09/29 12:11 - Valid ACC@[1,5,10,20]: 0.74053, 0.74584, 0.74673, 0.74785
+09/29 12:11 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0146.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 12:12 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70741766, 0.71034782, 0.71197569, 0.71273536, 0.7139834 ]),
+ 'MRR': np.float64(0.7095293654937425),
+ 'NDCG': array([0.70741766, 0.70926638, 0.71000487, 0.71025572, 0.71057233]),
+ 'Recall': array([0.70741766, 0.71034782, 0.71197569, 0.71273536, 0.7139834 ])}
+09/29 12:12 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 12:12 - Best valid NDCG@5 at epoch 146
+
+09/29 12:12 - Batch 0 / 277, Total_loss: 0.02747 = Recloss: 0.00145 + Divloss: 0.17789
+09/29 12:26 - Batch 138 / 277, Total_loss: 0.02802 = Recloss: 0.00122 + Divloss: 0.18326
+09/29 12:39 - Batch 276 / 277, Total_loss: 0.02757 = Recloss: 0.00163 + Divloss: 0.17731
+09/29 12:41 - Avg Epoch 147 / 150, Total_Loss: 0.02810 = Recloss: 0.00119 + Divloss: 0.18396
+09/29 12:41 - Valid Recall@[1,5,10,20]: 0.74081, 0.74590, 0.74673, 0.74791
+09/29 12:41 - Valid NDCG@[1,5,10,20]: 0.74081, 0.74370, 0.74397, 0.74428
+09/29 12:41 - Valid ACC@[1,5,10,20]: 0.74081, 0.74590, 0.74673, 0.74791
+09/29 12:41 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0147.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 12:42 - New test top@k result at k = (1, 2, 5, 10, 20):
+ {'ACC': array([0.70714635, 0.70953389, 0.71165012, 0.71257258, 0.71403766]),
+ 'MRR': np.float64(0.7091008639867522),
+ 'NDCG': array([0.70714635, 0.70865272, 0.70956469, 0.70987094, 0.71023673]),
+ 'Recall': array([0.70714635, 0.70953389, 0.71165012, 0.71257258, 0.71403766])}
+09/29 12:42 - Saved best weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/best_weight_run_009.pth
+09/29 12:42 - Best valid NDCG@5 at epoch 147
+
+09/29 12:42 - Batch 0 / 277, Total_loss: 0.02828 = Recloss: 0.00045 + Divloss: 0.19024
+09/29 12:56 - Batch 138 / 277, Total_loss: 0.02728 = Recloss: 0.00080 + Divloss: 0.18106
+09/29 13:09 - Batch 276 / 277, Total_loss: 0.02838 = Recloss: 0.00120 + Divloss: 0.18576
+09/29 13:10 - Avg Epoch 148 / 150, Total_Loss: 0.02846 = Recloss: 0.00113 + Divloss: 0.18687
+09/29 13:10 - Valid Recall@[1,5,10,20]: 0.74042, 0.74590, 0.74679, 0.74796
+09/29 13:10 - Valid NDCG@[1,5,10,20]: 0.74042, 0.74355, 0.74383, 0.74413
+09/29 13:10 - Valid ACC@[1,5,10,20]: 0.74042, 0.74590, 0.74679, 0.74796
+09/29 13:10 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0148.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 13:10 - Best valid NDCG@5 at epoch 147
+
+09/29 13:10 - Batch 0 / 277, Total_loss: 0.02795 = Recloss: 0.00147 + Divloss: 0.18099
+09/29 13:24 - Batch 138 / 277, Total_loss: 0.02963 = Recloss: 0.00174 + Divloss: 0.19069
+09/29 13:38 - Batch 276 / 277, Total_loss: 0.02852 = Recloss: 0.00140 + Divloss: 0.18542
+09/29 13:39 - Avg Epoch 149 / 150, Total_Loss: 0.02814 = Recloss: 0.00111 + Divloss: 0.18475
+09/29 13:39 - Valid Recall@[1,5,10,20]: 0.74048, 0.74595, 0.74668, 0.74796
+09/29 13:39 - Valid NDCG@[1,5,10,20]: 0.74048, 0.74365, 0.74388, 0.74421
+09/29 13:39 - Valid ACC@[1,5,10,20]: 0.74048, 0.74595, 0.74668, 0.74796
+09/29 13:39 - Saved checkpoint to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_ep0149.pt and latest: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/ckpt_run_009_latest.pt
+09/29 13:39 - Best valid NDCG@5 at epoch 147
+
+09/29 13:39 - Saved last weights to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/last_weight_run_009.pth
+09/29 13:39 - 
+ Training on NYC Finished, Best Valid at epoch 147
+09/29 13:39 - ***Best Test Top@k Result at k = (1, 2, 5, 10, 20) is***
+{'ACC': array([0.70714635, 0.70953389, 0.71165012, 0.71257258, 0.71403766]),
+ 'MRR': np.float64(0.7091008639867522),
+ 'NDCG': array([0.70714635, 0.70865272, 0.70956469, 0.70987094, 0.71023673]),
+ 'Recall': array([0.70714635, 0.70953389, 0.71165012, 0.71257258, 0.71403766])}
+09/29 13:39 - 
+Experiment summary saved to: /tmp/pycharm_project_CP/DiffDGMN_main/local_logs/GT_kan/NYC/experiments_summary.csv
+09/29 13:39 - 
+Total experiment time: 212828.11 seconds
