@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/27051967/README.md)
 # Hyper-GMVAN
 
 Hyper-GMVAN is a **hypergraph-enhanced, diffusion-based POI recommendation** implementation built on top of the Diff-DGMN codebase structure. It models a user’s next-POI preference from historical check-in sequences by combining:
@@ -48,6 +49,70 @@ Each city folder should contain (at minimum):
 - `dist_on_graph.npy` (edge weights for the distance graph)
 
 The included `DiffDGMN_data/data/raw/README.txt` provides background about the original dataset source.
+
+---
+
+## Event data → model inputs (data pipeline details)
+
+### 1) How event data becomes model inputs
+
+**English**
+
+This repo trains from the preprocessed `all_data.pkl`. Each training sample in `trn_set/val_set/tst_set` is a tuple shaped like:
+
+- `uid`: user id (integer, **0..n_user-1**)
+- `poi`: the next POI label (integer, **0..n_poi-1**)
+- `seq`: the historical POI sequence before `poi` (list/array of POI ids)
+- `seq_time`: timestamps aligned with `seq` (list/array; integer-like)
+- `cur_time`: current timestamp for this prediction (integer-like)
+- an extra field (unused by the current dataloader)
+
+At runtime (`DiffDGMN_main/dataset.py`):
+
+- **Sequence graph input**: `seq` + `seq_time` are converted to a PyG `Data` graph by `getSeqGraph()`:
+  - Local node ids are built per sequence; `Data.x` stores the **original global POI ids**.
+  - A sliding window (`hyper_edge_window`, default 4) creates hyperedges.
+  - Hyperedge attributes are `hyperedge_attr = [length, time_span, avg_geo_distance]`.
+- **Flattened sequence input**: the raw `seq` is also passed as a flattened tensor `batch.seq` and later padded inside the model to build attention K/V.
+- **Time feature**: `(cur_time // 60) % 168` produces an **hour-of-week** bucket (0..167). (Currently it is returned by the dataloader; whether it is used depends on the model wiring.)
+
+### 2) Resize / padding behavior
+
+- **Sequence “resize”**: if `len(seq) > max_len` (CLI arg `--length`, default 200), the dataloader **truncates to the most recent** `max_len` events:
+  - `seq = seq[-max_len:]`
+  - `seq_time = seq_time[-max_len:]`
+- **Padding**: sequences are **not padded in the dataset**. In `DiffDGMN_main/model.py`, the flattened sequences are split back by per-sample lengths and padded with zeros via `pad_sequence(..., padding_value=0.0)` to form `[B, L, d]` tensors for attention.
+
+### 3) Normalization (where it happens)
+
+- **Distance-graph edge weights**: in `getDatasets()`, `dist_on_graph.npy` is normalized by max:
+  - `edge_weights /= edge_weights.max()`
+  These weights become `G_D.edge_attr` used by module B.
+- **Hyperedge attributes**: `getSeqGraph()` uses raw `dist_mat` values for `avg_geo_distance` and raw timestamp differences for `time_span` (no extra scaling inside this repo).
+- **Model-side normalization**:
+  - `L_hat_u` is LayerNorm’ed then L2-normalized (`F.normalize(..., p=2)`).
+  - Final logits are **z-score normalized per user**: `(logits - mean) / std`, then temperature-scaled.
+
+### 4) Label mapping (how `poi` becomes a training target)
+
+- The code assumes that processed POI ids are already **contiguous indices** `0..n_poi-1`.
+- **Training**: the positive label is the scalar `poi` id. The model produces logits `[B, n_poi]`, and the positive score is selected by `gather`.
+- **Validation/Test**: a one-hot label vector `labels` of shape `[n_poi]` is created with `labels[poi] = 1`. During evaluation, previously seen training POIs for that user are masked out (see below).
+
+### 5) Ignore index / masking (what is ignored and how)
+
+- There is **no `ignore_index`-style loss** in this repo (no token-level cross entropy over padded positions).
+- What is “ignored” happens via **masking candidates** at evaluation time:
+  - For each user, `exclude_mask` is built from that user’s **training** visited POIs (`tr_dict[uid]`).
+  - In `eval_model()`, scores where `exclude_mask == True` are set to a large negative value (`-1e10`) so they are not ranked.
+- Padding positions inside attention are padded with zeros; the current implementation does **not** pass a `key_padding_mask` into `nn.MultiheadAttention`, so padded steps contribute as zero vectors.
+
+### 6) Train/valid/test split (how it is determined)
+
+- Splits are **precomputed in the processed dataset** and stored in `all_data.pkl`:
+  - `trn_set, val_set, tst_set` (sample tuples)
+  - `trn_df, val_df, tst_df` (dataframes used to build per-user visited POI lists)
+- This repo does **not** re-split raw events on the fly; to change the split, regenerate `all_data.pkl`.
 
 ---
 
