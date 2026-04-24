@@ -1,0 +1,15 @@
+#
+# Hyper-GMVAN / DiffDGMN dependencies
+# Tested versions (from README): Python 3.8.13
+#
+# NOTE: torch_geometric requires extra wheels (torch-scatter/torch-sparse/...)
+# matched to your PyTorch + CUDA/CPU build. Install those following PyG docs.
+#
+torch==1.12.1
+numpy==1.23.3
+pandas==2.0.3
+torchsde==0.2.6
+torch-geometric==2.3.1
+
+# Optional (only needed if you run optuna_module.py)
+optuna>=3.0.0
